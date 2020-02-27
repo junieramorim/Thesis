@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classe do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Opções:
+%  - Graduação: bacharelado|engenharia|licenciatura
+%  - Pós-graduação: [qualificacao], mestrado|doutorado, ppca|ppginf
+
+% \documentclass[engenharia]{UnB-CIC}%
+\documentclass[qualificacao,doutorado,tese,ppginf]{UnB-CIC}%
+
+\usepackage{pdfpages}% incluir PDFs, usado no apêndice
+\usepackage{amsmath}%
+\usepackage{amssymb}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+\usepackage{color, colortbl}
+\usepackage{glossaries}  
+\usepackage{tikz}
+\usepackage{stmaryrd}
+\usepackage{eucal}
+
+%For the tables
+\usepackage[normalem]{ulem}
+\usepackage{tablefootnote}
+\usepackage{colortbl}
+
+\usepackage{rotating}
+
+\usepackage{indentfirst} %identa o primeiro paragrafo
+\usepackage{tabularx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações do Trabalho
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\orientador{\prof \dr Vander Alves}{CIC/UnB}%
+\coorientador{\prof \dr Edson Pignaton de Freitas}{INF/UFRGS}%
+%\coorientador{\prof \dr José Ralha}{CIC/UnB}
+\coordenador[a]{\prof[a] \dr[a] Genaína Nunes Rodrigues}{CIC/UnB}%
+\diamesano{6}{dezembro}{2019}%
+
+
+\membrobanca{\prof[a] \dr[a] Ingrid Nunes}{INF/UFRGS}%
+\membrobanca{\prof[a] \dr[a] Genaína Nunes Rodrigues}{CIC/UnB}%
+% CIC - Computer Science Department
+
+\autor{Junier Caminha}{Amorim}%
+
+\titulo{A Product Line Based Method to Provide Command and Control Agility}%
+
+\palavraschave{Software Product Line, Command and Control, agility, dynamic}%
+\keywords{Software Product Line, Command and Control, agility, dynamic}%
+
+%\newcommand{\unbcic}{\texttt{UnB-CIC}}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \capituloE{introduction}{Introduction}{
+This chapter introduces this work by first describing the context (Section~\ref{sec:context}). Next, follow the research problems and corresponding motivations (Section~\ref{sec:problemMotivation}). Then a proposed solution is presented (Section~\ref{sec:solutionIntro}) as well as its planned evaluation (Section~\ref{sec:evalIntro}). Finally, we discuss the remainder structure of this work (Section~\ref{sec:structureWork}).
+}
+
+    \capituloE{background/background}{Background}{
+This chapter presents all main theoretical knowledge that will be the basis to all discussion about the problems and the proposed solution.
+    }%
+    
+    \capitulo{related}{Related Work}%
+    
+    \capitulo{assumptions/assumptions}{Assumptions and Restrictions}%
+    
+    \capituloE{development}{Solution and Evaluation}{
+In this chapter, we first detail the addressed research problems, highlighting important aspects that are more valuable to the domain context (Section~\ref{sec:problem}). We present an appropriate modelling to trace essential requirements of these problems to the proposed solution, defining a process that provides agility to a C2 System (Section~\ref{sec:solution}). 
+    }%
+    
+    \capitulo{next_steps}{Next Steps}%
+    
+    %\apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%
+    %\anexo{Anexo1}{Documentação Original \unbcic\ (parcial)}%
+    \input{tex/glossary}
+    \printglossary[title={Glossary}]
+\end{document}%

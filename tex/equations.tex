@@ -1,0 +1,65 @@
+
+The context is formed by the mission, the environment and the self (members themselves). Any of these elements can suffer modifications and the possible system situations are the following:
+\begin{enumerate}
+    \item All members that form the teams are performing the tasks with no special adjustments in runtime (even not being all mission defined by a set of tasks). This is the normal situation.
+    \item The context changes cause a reconfiguration in one or more member such as a DSPL structure. This represents C2 Approach Agility that indicates the capability of the system to adapt itself with no C2 Approach changes. In this case, with information about the tasks to be performed, each member will reconfigure itself to try to stabilize the system, allocating all possible tasks available.
+    \item In case of C2 Approach Agility does not work, it is necessary to try a C2 Approach change to deal with a new context. The members will be organized according to a C2 Approach selected and analyze if the tasks can be performed. The new coordination will impact the task allocation procedure. The capability of getting a C2 Approach to deal with context changes defines the C2 Meneuver Agility level.
+    \item No members configuration and C2 Approach are suitable to perform the tasks. Complete C2 System Failure.
+\end{enumerate}
+
+Many environment changes, e.g., risk level increase or security requirements are treated as a factor that needs to be observed by someone and triggered manually in the system.
+
+In the following, we show the logic formulas that represents the situations listed above. The mission to be accomplished is formed by a set of tasks $T=\{t_1, t_2, t_3,...\}$. The set of members is $M = \{m_1, m_2, m_3,... \}$, and each member $m_k$ has a set of possible and valid configurations $C_k = \{c_{1k}, c_{2k}, c_{3k}, ... \}$. A member $m_k$ can have a set $t_k \subseteq T$ of tasks allocated to it, and the empty set indicates no task allocated or tasks finished.
+
+There is no collaborative work, i.e., for two different members $m_i$ and $m_j$, with $t_i, t_j \subseteq T$\, it is valid that $t_i \cap t_j = \emptyset$.
+
+We define a team as a set $\tau$ of members such as $\tau \subseteq M$. All possible C2 Approaches (Conflicted, De-Conflicted, Coordinated, Collaborative and Edge) form the set $\Omega$. A team always has a C2 Approach $\omega \in \Omega$ applied that defines its coordination and organization. 
+
+The Equation \eqref{eq1} shows the case 1 where the members and/or teams are executing the tasks allocated normally with no issues and operating on a C2 Approach $\omega$.
+
+\begin{equation}
+\label{eq1}
+ P_1 = \forall m \in M, \exists c \in C_m ( \square (\exists t_m \subseteq T | (c, \omega) \models t_m ) \land \diamond (T = \emptyset )) 
+\end{equation}
+
+The case defined by item 2 performs a reconfiguration based on the list of tasks to be allocated. This allocation looks for maximize any quality level, e.g., sensors and tasks compatibility or time to execution. This case satisfies at least one of \eqref{eq2} and \eqref{eq3}. 
+
+Changes in the mission, generating another set of tasks $T'$ requires a verification if the current member configuration satisfies the requirements. This situation is attended by Eq. \eqref{eq2}. When the changes affect one or more members, a reconfiguration can be necessary to reach a new configuration $c'$ and it is represented by Eq. \eqref{eq3}. The reconfiguration will occurs as a DSPL having the tasks available to define which configuration is suitable to perform those tasks, if feasible. In case of unsuccessful, they can give up the task, but always keeping the C2 Approach $\omega$.
+
+Environment modifications is not in the scope of this study based on its complexity. These dynamic aspects will be treated as self modifications, due to the correlation among environment changes and self modification to deal with stimulus around itself.
+
+%\begin{equation}
+%\label{eq2}
+% P_2 = ((\forall m \in M_f, \forall t' \subseteq T', \exists c' \in C_m %((c',\omega) \models t')) \land (T' \ne \emptyset) ) 
+%\end{equation}
+
+
+\begin{equation}
+\label{eq2}
+ P_2 = (\forall m \in M (\diamond \exists T' \ne T (\exists t'_m \subseteq T', \exists c \in C_m | (c, \omega) \models t'_m))) \land (T' \ne \emptyset)  
+\end{equation}
+
+\begin{equation}
+\label{eq3}
+ P_3 = (\forall m \in M (\diamond \exists c' \in C_m ( \exists t \subseteq T | (c',\omega) \models t))) \land (T \ne \emptyset)  
+\end{equation}
+
+%where $M_f \subseteq M$ is the set of members that had any issue, and $T'\subseteq T$ represents a possible mission modification.
+
+Item 3 defines the situation that C2 Approach agility was not enough to deal with the context and a C2 Approach change is required. This case represents the C2 Maneuver agility, i.e., the agility to change among different C2 Approaches. The Eq. \eqref{eq4} shows this situation. 
+
+\begin{equation}
+\label{eq4}
+ P_4 = \exists \omega' \in \Omega | P_1[\omega / \omega']
+\end{equation}
+
+From this state, all formulas operate with a variable replacement where $[\omega / \omega']$ .
+
+Equation \eqref{eq5} represents the item 4 where the tasks were accomplished and/or the system is not able to execute the remaining tasks.
+
+\begin{equation}
+\label{eq5}
+ P_5 = \diamond \square ((T = \emptyset) \lor (\neg (P_2 \lor P_3)))
+\end{equation}
+
+In all cases, we are considering the task allocation procedure as an inner action that runs together with the member reconfiguration, giving information to define right feature selection, and aiming: 1) to optimize results; 2) keep the system running; and 3) to complement the C2 Approach and member configuration changes. 

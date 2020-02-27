@@ -1,0 +1,96 @@
+The domain representation requires a definition to the satisfiability of requirements. A C2 system aims to perform a mission, characterized as a set of tasks $T$. This execution is done by a set of members $E$, i.e., a team, that receive the tasks allocated according to their capabilities and resources. This allocation occurs because there is a C2 Approach $\omega$ being operated by the team as shown in Equation~\ref{sat01} using QPTL~\cite{qptl01}.
+
+The temporal operator, i.e., eventually, indicates the dynamic context and the capability to adapt the system to the changes, i.e., all tasks will be allocated at some point in the future during the mission execution according to the context awareness obtained with the C2 Approach adoption.
+
+\begin{center}
+\begin{equation}
+\label{sat01}
+E^\omega \models T \Longleftrightarrow \Square \forall t \in T \Diamond (\exists \omega \in \Omega, \exists e_j \in E \ \centerdot \ ((\omega \models t) \land (e_j \models t)))
+\end{equation}
+\end{center}
+
+or in a short way,
+
+\begin{center}
+\begin{equation}
+\label{}
+E^\omega \models T \Longleftrightarrow \Square \forall t \Diamond (\exists \omega \exists e_j \ \centerdot \ ((\omega \models t) \land (e_j \models t)))
+\end{equation}
+\end{center}
+
+As explained in Section~\ref{sec:context}, A C2 System always operates a C2 Approach (C2A) $\omega$ that belongs to the set of all identified C2 Approaches $\Omega$. This C2A must satisfy the set of tasks and guarantees an appropriate task allocation, otherwise it is necessary to change the approach. Equation~\ref{sat04} shows the C2A satisfiability during system execution.
+
+\begin{center}
+\begin{equation}
+\label{sat04}
+\omega \models T \Longleftrightarrow \forall t \in T \Diamond \exists \omega \in \Omega \centerdot \ \omega \models t 
+\end{equation}
+\end{center}
+
+or in a short way,
+
+\begin{center}
+\begin{equation}
+\label{}
+\omega \models T \Longleftrightarrow \forall t \centerdot \ \omega \models t 
+\end{equation}
+\end{center}
+
+Equation~\ref{sat05} shows the C2A satisfiability for each task. 
+
+\begin{center}
+\begin{equation}
+\label{sat05}
+\omega \models t \Longleftrightarrow  \Diamond \exists e_j \in E \centerdot  ((e_j \models t) \land (t \in T_j))
+\end{equation}
+\end{center}
+
+where $T_j$ represents the set of tasks allocated to the member $e_j$, such as $T_j \subseteq T$. Since there is no collaboration among the members, i.e., each task can only be allocated to a member during any time up to its conclusion, each member $e_i$ gets an allocation set $T_i$. A complete allocation, i.e., all tasks of a mission are allocated to some member, the mission $T$ is composed by the all tasks allocated. Equation~\ref{sat06} shows this composition.
+
+\begin{center}
+\begin{equation}
+\label{sat06}
+\bigcup\limits ^{|E|}_{i=1} T_i \subseteq T
+\end{equation}
+\end{center}
+
+The task allocation can occurs any time during the execution if any member has resources available, e.g., fuel and suitable sensor. According to the allocation function \textit{f\_alloc} used by the Task Allocator PG (TA) of the C2 Channel System, we can rewrite the Equation~\ref{sat05} as
+
+\begin{center}
+\begin{equation}
+\label{sat05}
+\omega \models t \Longleftrightarrow   \Diamond \exists e_j \centerdot ((e_j \models t) \land (\omega.TA.f\_alloc([t],E)=<j,[t]>))
+\end{equation}
+\end{center}
+
+All members $e_j \in E$ are modelled as a DSPL and they are represented by their Feature Model ($FM_j$) and the satisfiability of a task indicates that exists a valid configuration of a member that is compatible with this task and becomes a member able to perform it. The Equation~\ref{sat02} shows this relation.
+
+\begin{center}
+\begin{equation}
+\label{sat02}
+e_j \models t \Longleftrightarrow \exists c \in \llbracket FM_j \rrbracket \ | \ c \models t
+\end{equation}
+\end{center}
+
+Extending this definition, we can define the member's configuration satisfiability shown by Equation~\ref{sat03} not considering quality levels,
+
+\begin{center}
+\begin{equation}
+\label{sat03}
+c \models t \Longleftrightarrow \exists f \in c \centerdot \ \exists (f \mathcal{R} t)
+\end{equation}
+\end{center}
+
+where $\mathcal{R}$ represents a relation between the feature $f$ and the task $t$. This relation links features and tasks, and can be represented by a table that indicates a member execution compatibility level, i.e., sensor quality to perform the task. The sensor is represented by the features that can be enabled or not according to requirements.
+
+An example of this relation $\mathcal{R}$ is shown in Table~\ref{table_example01}. Two different sensors onboard in a member are represented as features in its $FM$ with different levels of result when applied to perform different types of tasks. The table shows that VGA sensor is incompatible to perform the task $t_2$ and thermal sensor is fully suitable to the task $t_2$. These values are used during the allocation procedure to determine if the task $t$ will be included in the subset of tasks $T_j$ of the member $e_j$.
+
+\input{tables/example01.tex}
+
+This modelling guarantees agility due to the adaptability try during execution when changes in context occurs.
+
+
+
+
+
+

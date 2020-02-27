@@ -1,0 +1,48 @@
+As previously explained, the proposal of this research is to present a process to deal with C2 in dynamic scenarios in order to satisfy quality levels and provide agility. To validate this process, we will apply the technology transfer model proposed by~\textit{Gorschek et al.}~\cite{transf01}. 
+
+According to such model, Figure~\ref{valid} shows interactions between the academic environment and industry. It describes the sequence since the problem observation in the domain up to the solution release, being validated at different ways and environments. In this model, two steps of validation are a static validation in industry and a validation in academia. Our study proposes to submit the solution to these two validations. 
+
+\begin{figure}
+\centering
+\scalebox{.8}{\input{tiks/valid.tex}}
+\label{valid}
+\caption{Technology Transfer Model adapted from~\textit{Gorschek et al.}~\cite{transf01}}
+\end{figure}
+
+To perform the static validation step in industry, we are planning to design a survey and interview with domain experts. Furthermore, we are analyzing the possibility of workshops execution at the industrial partner, in order to share and validate all concepts and domain theory used by this research with domain specialists. Abstract scenarios and situations will be shown to experts aiming at the evaluation of the proposed process  according to all  defined requirements. We chose the static instead of dynamic validation in industry due to the risk and cost of creating real scenarios to validate these concepts. The same philosophy is followed elsewhere~\cite{FRANCE2014}.
+
+In addition to the static validation in industry, we are planning the validation in the academia. This procedure will be performed with simulations in the academic environment by software.
+So far, with previous simulations executed, we have collected  preliminary evidence of C2 agility in dynamic scenarios where some members are removed randomly. In our experiment, we could identify impacts of C2 approach adopted on the results obtained during tasks allocation. 
+To do such simulations, we chose NetLogo\footnote{Found at http://ccl.northwestern.edu/netlogo/}, a multi-agent programmable modeling environment that permits to simulate scenarios where there are agents interacting and executing tasks under environment effects. With this tool, it is possible to analyze the agent's reactions and collect results. This tool permits to generate simulations in 2D and 3D, and it is compiled by any Java Virtual Machine (5.0 or above). Active objects with simple goals can be implemented as mobile agents and they can be showed in a dynamic way.
+
+\textit{Abar et al.} in \cite{ABAR201713} analyzed a large group of agent-based tools in many aspects that impact on their use, as simplicity and strength to model. Although NetLogo uses a specific language with a particular syntax, it is considered a tool with low complexity and requires medium strength to be used as a modeling tool. Furthermore, there are many extensions that can be used to include resources and to  integrate with other technologies to exchange data and results.
+
+In principle, we do not anticipate formal verification (e.g., Model Checking) due to the combinatorial explosion caused by the inner complexity of the models created, which generates a huge number of possible paths generating an uncountable quantity of execution alternatives. 
+
+%The present research has the focus on the process of modelling in C2 context. The system follows the diagram presented in Figure \ref{model01} where the states treat situations of circumstance changes that require adaptation. The guard conditions to be satisfied in order to change the state are listed in Table \ref{table:table07}.
+
+%\figura[!h]{model01}{State machine representing the C2 system process}{model01}{width=1\textwidth}%
+
+%The actions necessary to execute adaptation steps in the system are listed bellow:
+
+%\begin{itemize}
+%    \item \textbf{reconf} - makes the elements reconfiguration, as a DSPL, activating and deactivating features according to the list of tasks available, making simultaneous reallocation if it is necessary.
+%   \item \textbf{maneuver} - executes a C2 Approach change. It can be followed by elements reconfiguration according this new organization structure.
+%  \item \textbf{run} - it is the normal execution, with no kind of reconfiguration required.
+% \item \textbf{finish} - it confirms the mission accomplishment or no more resources available to be allocated to tasks execution.
+%\end{itemize}
+
+%\input{tables/table07.tex}
+
+
+
+
+
+%To an academic validation, we use a Program Graph paradigm and its unfold representation, so-called Transition System (TS), that shows all long execution with all possible running paths according to constraints and conditions.
+
+
+
+To validate the rules and constraints in the model we define that an element satisfies an execution when the required QA level is obtained as result of that operation. As an example, when we say $c \in  \llbracket e_k \rrbracket \models T$, i.e., a configuration of an element $e_k$ satisfies a set $T$ of tasks,  we are considering that the execution of this set of tasks by the element with the configuration $c$ will satisfy the QA levels measured during this execution. It becomes possible the quality attribute handle.
+
+The constraints combination with the attributes level measurement will be checked with the using of a Constraint Satisfaction Problem (CSP) to check satisfaction of QoS. 
+

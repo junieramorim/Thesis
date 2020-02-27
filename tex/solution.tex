@@ -1,0 +1,274 @@
+Addressing the research problems and corresponding questions ultimately means ensuring the induced agility enablers. Accordingly, we first present a modeling strategy and then propose a method to provide such enablers.
+
+We model agility enablers as QAs. Quality levels according to domain requirements are monitored to identify the need for system's adaptation to keep the C2 Agility. Furthermore, our approach has to deal with multiple QAs, since the domain works with more than one quality attribute (QA) during system execution. System adaptation must occur according to the effects of all measured attributes. 
+
+Assuming this modeling strategy and to deliver the agility enablers, we follow the dimensions of realizing multiple QAs in self-adaptive systems defined by~\textit{Mahdavi-Hezavehi et al.}~\cite{SAS_001}. Accordingly, we propose the process shown in Figure~\ref{process}. The first step, QA Specification, defines QAs of interest as goals of the system's adaptation. All domain requirements are analyzed to define the desired levels for these attributes. Next, the second step, QA Monitoring and Treatment, defines the aspects to build a strategy to monitor and to treat multiple QAs sets. The third step, QA Handling, specifies the self-adaptation mechanism that deals with the QAs.   In our case, this mechanism amounts to multiple feedback loops, acting in layers, within the members in the C2 System. Finally, QA Guarantees defines mechanism to validate the measurements and results obtained indicating that the system satisfies all quality requirements.
+
+% TODO please fix in the figure: "QA Handling" -> "QA Handling and Treatment" 
+%  "QA Handling and Treatment" -> "QA Handling"
+% TODO in the figure, we should have MDSPL label a horizontal square bracket spanning
+% both "QA Monitoring and Treatment" and "QA Handling"
+%%%%%% OK %%%%%%%%%%
+\begin{figure}[h]
+\centering
+\scalebox{.8}{\input{tiks/Process.tex}}
+\label{process}
+\caption{Process to provide agility guided by QA. MDSPL is the realization.}
+\end{figure}
+  
+
+%%% COMMENTED BY THE ADVISOR %%%%
+%Figure \ref{qas} shows the dimensions defined in \cite{qa01} presented as a flow with four steps that can be applied to identify, to monitor and to adjust multiple QAs. We adapted the list of quality categories to work as a loop due to the possibility of goal changes occurs during the execution under circumstances change. With these changes, there are impacts on the QAs and between QAs. These dimensions are focused on QAs during and after adaptation process of a SAS.
+
+%\begin{figure}[h]
+%\centering
+%\scalebox{.6}{\input{tiks/qa1.tex}}
+%\label{qas}
+%\caption{Dimensions for realizing multiple QA in SAS (Adapted from \cite{qa01})}
+%\end{figure}
+
+%The flow starts from QA Specification where the QAs, mapped as goals, are identified and their priority are adjusted according to changes performed in one or more quality attributes or in the circumstances. At this moment, the QA will be treated during system adaptation according to its importance and its role as a system goal.
+
+%On the second dimension, QA Monitoring and Treating, we define which QA set will be monitored and treated and it guides the system adaptation process. In this dimension, the QAs treatment in SAS, their preference and priority are worked to deal with collateral effects of some quality violations.
+
+%Dealing with the SAS mechanisms that treat QAs, the QA Handling involves different strategies to modelling QA sets and permits to have mechanisms regarding types and formats in adaptation. Finally, the QA Guarantees assures the system capability to keep the QAs levels within acceptable range.
+
+
+
+\subsection{Multi Dynamic Software Product Line (MDSPL) }
+
+%%% COMMENTED BY THE ADVISOR %%%%
+%Our modelling is based on Self-Adaptive Systems (SAS) architecture using controllers to monitor stimulus, e.g., feedback loops, capable to monitor, analyse and adapt the system components according to context changes. DSPL is an approach to implement this architecture and it is based on commonalities and variabilities to generate all different products.
+
+To realize the previously presented process for achieving agility enables, we further reduce such enablers to two fundamental requirements: configuration and coordination of members in the team comprising the C2 System. Figure \ref{c2a2} trace such requirements to agility dimensions and the enablers listed in Table~\ref{table:table06} that are related with our RQs. 
+
+\begin{figure}[h]
+\centering
+\label{c2a2}
+\scalebox{.7}{\input{tiks/agility_enablers.tex}}
+\caption{C2 Agility enablers linked to the analysis proposal}
+\end{figure}
+
+
+On a fine-grained level, \textit{configuration} refers to the ability of system members to adapt themselves according to new requirements, conditions, or circumstances. On a coarse-grained level, configuration refers to a new system structure with no C2 Approach change. Differently, \textit{coordination} represents how these elements exchange awareness, coordinate their operations, or collaborate with each other, i.e., different C2 Approaches application. Therefore, configuration and coordination both contribute to C2 Approach Agility and C2 Maneuver Agility, but in different intensity as indicated by the arrows in Figure~\ref{c2a2}, where dotted arrows show a weaker contribution.
+
+%However, these correlations are not exclusively. Coordination and configuration work as complements to both C2 Agility parts, i.e., the coordination capability complements the C2 Approach Agility and the configuration does the same to C2 Maneuver Agility.  With this, the dotted arrows in Figure \ref{c2a2} show the collaboration of coordination and collaboration to both components of C2 Agility.
+
+%All other enablers are related in different ways to both layers indistinctly. The enabler robustness was unconsidered due to the non-uniformity about its definition, as mentioned by \textit{Alberts et al.} in \cite{Power01} and by \textit{NATO Report} \cite{FRANCE2014}.
+
+To satisfy these requirements and in line with SAS~\cite{AlvesSBBG09}, our method relies on the new concept of \textit{Multi Dynamic Software Product Line} (MDSPL), which is represented by two \textit{quasi-orthogonal} dimensions is shown in Figure~\ref{mdspl01}. \footnote{\textit{Brun et al.}\cite{SAS02} applies the definition of orthogonality in self-adaptive systems to represent independent dimensions where any modification in one of them do not cause impact on the others, being completely independent. In this work, we are using this term to express a partial dependence among these two dimensions, where the changes in any of them may cause reactions in the other, but this effect is not mandatory and depends on the requirements.} MDSPL integrates DSPL~\cite{BencomoHA12} and MPL~\cite{Rosenmuller2010}. On the one hand, the DSPL dimension applies to C2 System members and address their configurability requirement so that elements self adapt when required by change in circumstances. On the other hand, in the MPL dimension, when such adaptation is not sufficient to deal with the new circumstances, the members engage in a coordination protocol trying to move to a new C2 Approach. This way, new communication structure and awareness sharing strategies are in place (C2 Approach). Therefore, the MDSPL satisfies both the configuration and coordination dimensions required for delivering the agility enablers comprising  C2 Agility. 
+
+\begin{center}
+    \figura[!h]{MDSPL}{MDSPL with its dimensions}{mdspl01}{width=.4\textwidth}%
+\end{center}
+
+%Referencing to collaborative work between agents, the MPL dimension represents the second step of a teamwork described by \textit{Keplicz et al.}~\cite{Dunin-Keplicz2010} and called \textit{team formation}. When defining an organization structure of the members, i.e., DSPL, we are selecting a team to perform a specific set of tasks.
+
+The MDSPL's dynamic context  model change of circumstances, i.e., different positions in the endeavour space  reflecting changes in the environment, mission, or in the self, i.e., members' status. Moreover, the MDSPL is goal-oriented, thereby guided by QAs including cost considerations. According to Figure \ref{process}, the steps QA Monitoring and Treatment and QA Handling group the actions performed by the components embedded in the MDSPL structure. Since the MDSPL is goal oriented, it involves part of the QA Specification, as well as the QA Guarantees because it looks for its satisfability during members' execution.
+
+
+
+\subsection{Feedback Loop Model}
+
+Essentially, for the MDSPL to monitor, treat, and handle the QA as goals, we use the classical concept of feedback loops to obtain information about the current QA levels and to act in case of these levels get out of the limits defined by the requirements. In particular, we leverage the classical  MAPE \cite{feedback01} loop (Monitor-Analyze-Plan-Execute) with layers. As our proposal is founded on Architecture-Based Self-Adaptive System principles, we model each MDSPL dimension, i.e., member DSPL and C2 Approach, with a MAPE-K loop organized in two layers as shown by the components view in Figure \ref{mape01}.
+
+The lowest loop is related to each DSPL and is responsible for members' monitoring and adaptation,  collecting information on context changes and adapting the DSPL configuration by enabling or disabling features. Alternatively, a new task allocation may be necessary according to the new team configuration and available resources. 
+
+If the lowest loops are unable to address the required QAs, a single high-level loop will collect information about the context and it will try to find a new C2 Approach that can handle the requirements. If a C2 Approach change occurs, new task allocation and member reconfiguration may be necessary. The details of task allocation, with multiple instances as well as DSPL, are outside the scope of this work, given the available body of knowledge on the subject. There are many studies \cite{Schwarzrock2017}\cite{HILAIRE20131323} that applies or present new strategies to deal with task allocation procedure optimizing results obtained from these executions.
+
+\begin{figure}[h]
+\centering
+\label{mape01}
+\scalebox{1}{\input{tiks/MAPE.tex}}
+\caption{multi layer MAPE-K loop}
+\end{figure}
+
+% TODO: this is really cool, but we don't explain it here in detail
+%  it could enrich the explanation of the philosophy behind the channel 
+% system semantics. I suggest we leave this for after the proposal defense
+
+According to \textit{Dunin-Keplicz et al.}~\cite{Dunin-Keplicz2010}, a reconfiguration algorithm has some properties that are classical to deal with adaptation. One mandatory property is the \textit{continuity}, that defines that if the system needs to change to avoid some obstacle or to deal with a new circumstance, it occurs as little as possible following a hierarchy of solution complexity level. In our case, this property is satisfied with the process behavior where the issues are treated always in the lowest level with as few changes as possible, and moves up to the upper layer when necessary. It justifies why we adopted an layered architecture. Another property of reconfiguration algorithm is \textit{conservativity}, i.e., inertia, represents that the system should change as few as possible. In the MDSPL, the structure looks for keep the same structure, i.e., C2 Approach, and performs reconfiguration in the members to deal with eventual circumstance change. While continuity has a vertical permeability, affecting one or more layers of the MDSPL structure, the conservativity looks for a local issue solving with no escalation of the problem.
+
+%
+%Additionally and Orthogonally, a strategy proposed by \textit{Vogel et. al.} \cite{SAS05} to represent multi %layers and responsibilities is using megamodels that group models with relations among them. This model eases %the development of adaptation logic to work as part of SAS in runtime. Furthermore, megamodels permit to use a %domain-specific approach and its logic changes during execution adapting the system to the new domain rules and %specifications.
+%
+
+\subsection{Structural Specification}
+
+\subsubsection{Coarse-grained Structure }
+
+In a high and structural level, our MDSPL model of the C2 System enables coordination of capable members to accomplish a mission. Each member is a DSPL with reconfigurable behavior addressing a subset of the mission tasks with prescribed quality levels. 
+
+Motivated by the scenario presented by \textit{Schwarzrock et al.}~\cite{Schwarzrock2017}, let's consider the example representing a team of Unmanned Aerial Vehicles (UAV) with suitable configurations to perform a mission composed by a set of five tasks. The team has three members and they organize themselves in a way to share information and make decisions, e.g. task allocation. This organization is the C2 Approach adopted by the team, that in this case is Coordinated with a central element that concentrates the awareness and decision, characterizing a star network topology. In this case, each UAV can be seen as a DSPL that acquires a valid configuration to be compatible with the tasks to be performed.
+
+Figure~\ref{example1} shows the previous example. The environment represents where the system is immersed. The sensors on the members acquire information from the environment to monitor possible changes. The allocation of each task is represented by the dotted arrows linked with the members. The communication is done with links between the members and is symbolized by double arrows in the model. It is possible to identify the central element,i.e.,$UAV_2$, as coordinator necessary to operate the C2 approach selected. 
+
+\begin{figure}[h]
+\centering
+\scalebox{.8}{\input{tiks/example1.tex}}
+\label{example1}
+\caption{A C2 system instance representing the tasks allocation presented in \cite{Schwarzrock2017}}
+\end{figure}
+
+In general, we abstract the representation where the MDSPL of a C2 System comprises a mission, an environment, a set of entities, and resourcess available to perform the mission. Figure \ref{meta01} shows the meta-model representing this structural view of the MDSPL of the C2 System.  The entities that perform the allocated tasks can be grouped in teams and this entity operates on a specific C2 Approach chosen according to the mission and requirements. The awareness sharing between the members occurs through links of communication defined by the C2 Approach selected. In terms of this proposal, resources are represented within members' onboard features.
+
+To provide C2 Agility to this model, the MDSPL must first be able to identify changes in circumstances. Indeed, members' onboard sensors  sense new environment conditions. Members are also aware of their status, e.g., battery level. Moreover, at the global level, there is a list of tasks ($T$) to be performed that characterize the mission. Changes in this list represents mission modification. By leveraging the reconfiguration capability of each member DSPL as well as their coordination capability, eventually performing task allocation and/or changing the C2 Approach, in all cases guided by QoS constraints, the MDSPL of the C2 System enjoys agility. 
+
+An assumption of our model is that there is no member collaboration within a single task, i.e., we have only one member per task but we can have more than one tasks allocated to a member. Still, there is an interaction between the members, with awareness sharing according to the C2 Approach that is being operated. This interaction contributes with the configuration adopted by the member because the members  configuring themselves to best perform allocated tasks. Furthermore, environment changes such as risk level increase or security aspects that require an external observation and action are outside the scope of this work.
+
+\begin{center}
+    \figura[!h]{Meta-Model-Static}{Meta-model representing structure of the MDSPL of the  C2 System}{meta01}{width=1\textwidth}
+\end{center}
+
+%due to the exponential complexity inserted into the model, becoming it unfeasible.
+
+\subsubsection{Fine-grained Structure: Feature Model}
+
+As previously explained, in the C2 System, the team comprises members that execute the tasks allocated to each of them. Each member $e$ belongs to a team that is defined as a set $E=\{e_1, e_2, ..., e_n\}$ of members. These elements are modelled as a DSPL and thereby they have control mechanisms to monitor context changes and adapt themselves to be able to perform tasks in new circumstances. This adaptation capability provides C2 Approach Agility.
+
+The DSPL of a member $e_k \in E$ is statically described by an attributed-based feature model (FM) to identify member variability, whereby
+%and the notation is $ \llbracket e_k \rrbracket_{FM}$. To simplify the representation, 
+ $ \llbracket e_k \rrbracket$ denotes the set of valid configurations from the FM of member $e_k$. The features in FM model both the environment (features represent sensors and their value as attributes)  and the self (functional status and some internal characteristic, e.g. battery level) of each C2 System member. Further, the DSPLs are goal-oriented~\cite{BencomoHA12}, that is, they aim at satisfying goals and reconfiguring for that purpose, if necessary. The goals of each DSPL are a partial view on the mission of the C2 System (its sets of tasks). Such  view is computed at runtime via task allocation (described in Section~\ref{sec:behavior}).  Initially, we consider functional goals, but we expect to handle cost and other attributes as the proposal is refined.  
+
+
+\subsection{Roles and Responsibilities} \label{sec:rolesResponsibilities}
+ 
+Motivated by the idea of multiple feedback loops to monitor multiple concerns presented by \textit{Vogel et al.}~\cite{Vogel01}, our proposal brings a similar concept presented in a different way. As proposed by \textit{Arcaini et. al.}~\cite{MAPE01}, each layer presented by the Figure \ref{mape01} can be represented by a role or responsibility of the system. This concept is compatible with the C2 application domain and it is called \textit{roles or responsibilities separation} \cite{Alberts2000}. In the C2 Domain, it is essential to define the members roles because their execution are guided by the responsibilities related to these roles. Indeed, roles defines the members' behaviour.
+
+Table \ref{table:table04} lists the three roles and corresponding responsibilities identified in domain. They are orthogonal to the component's view shown in Figure \ref{mape01}. Assuming that each member is modeled as a specific component, at any point in time, the same member can be playing more than one role. Conversely, each role can be played by different members. Further, a member can assume one or more roles during system execution, and these roles performed can be assumed simultaneously or sequentially in runtime. Therefore, each role can be represented as a dynamic view on the layered component's architecture.
+
+% TODO: it would improve presentation here if we provided a 1-paragraph example of role-to-member mapping here relating to the concrete example of figure example1, which we use in the Structural Specification subsection.
+%%%%%% OK %%%%%%%%%%
+
+\input{tables/table04.tex}
+
+Based on the example showed in Figure \ref{example1}, let's define some example roles to the members as following:
+
+\hspace{4cm} $UAV_1 \mapsto \{Executor\}$
+
+\hspace{4cm} $UAV_2 \mapsto \{Task Allocator, C2 Approach Selector\}$
+
+\hspace{4cm} $UAV_3 \mapsto \{Executor\}$
+
+The Executors run a virtual MAPE-K loop, i.e., lowest loop in Figure \ref{mape01}, to monitor and act according to circumstance changes. In a similar way, the $UAV_2$ has the ability to allocate tasks and to select the C2 Approach to be used by the team.
+
+Ultimately, roles deals with context changes, i.e., changes in the mission, the environment, or in the self. The response given by each role  when circumstance changes defines the system adaptation process, and the possibilities are the following:
+
+\begin{enumerate}
+    \item All executors in the team  are performing the tasks with no special adjustments in runtime. This is the normal situation;
+    \item Context changes cause a reconfiguration in one or more executors. This represents C2 Approach Agility, which indicates the capability of the system to adapt itself with no C2 Approach change. In this case, with information about the tasks to be performed, some executors will reconfigure themselves to try to stabilize the system. The Task Allocator may also try to reallocate all possible tasks available to complete the configuration step if necessary;
+    \item In case C2 Approach Agility does not work, it is necessary to try a C2 Approach change to deal with the new circumstance. The C2 Approach Selector will define the new C2 strategy, and the executors will be organized according to a C2 Approach selected and will analyze if the tasks can be performed. The new coordination may impact the task allocation procedure, so the Task Allocator may be called to redistribute tasks satisfying some QAs among the executors. The capability of finding and transitioning to a C2 Approach to deal with context changes defines the C2 Maneuver Agility level;
+    \item No executors configuration nor C2 Approach are suitable to perform the tasks after changes in circumstances. Unfeasible tasks are recorded and the C2 System proceeds with any subsequent tasks.
+\end{enumerate}
+
+
+\subsection{Behavioral Specification} \label{sec:behavior}
+
+A C2 System applies a set of members to perform a mission and they need to be able to adapt themselves according to circumstance changes. The members can operate in this dynamic scenario due to the awareness and context information exchange. Addressing the dynamic behavior requires a communication mechanism to guarantee an information exchange between the processes that are parts of C2 Agility. Members are thus stateful entities that interact in prescribed ways.  To precisely model this scenario, we rely on formal grounds, whereby we leverage a Channel System (CS) to describe the behavior of the C2 System, which we detail next. 
+
+According to Section~\ref{sec:rolesResponsibilities}, the C2 System is represented by three roles: C2 Approach Selector (C2A), Task Allocator (TA), and Executor (EX). We map instances of each role to one or more PGs in the corresponding CS. This structure is able to represent the communication among the these three roles, i.e., PGs, working in a parallel way.
+
+Equation \eqref{pg01} shows the Channel System ($CS_{UAV}$) of the C2 System, with instances of these three roles as PGs running in a parallel way, that represents the example of Figure \ref{example1} with the roles assignment made as example in the same Section previously cited.
+
+\begin{equation}
+\label{pg01}
+    CS_{UAV} = [C2A | TA | EX_1 | EX_2]
+\end{equation}
+
+A static view of Equation~\eqref{pg01}, with its channels, can be seen in Figure~\ref{pg}. Each member with index $k$ has a private asynchronous channel $m_k$ that is used by the task allocator to dispatch tasks to be performed. The channels $b_k$ are used by the member $k$ to send tasks not suitable to be performed for a new allocation. The channel $b_2$ is used to scale the tasks issues to the C2 Approach selector to identify another C2 Approach suitable to the entities perform the tasks.  Additionally, $CS_{UAV}$ corresponds to the C2 System whose coarse-grained structure is represented in Figure~\ref{example1}, assuming that, at a given point in time, the following role-to-member mapping holds: 
+
+\begin{center}
+\begin{equation}
+\{ C2A \mapsto \{UAV_2\}  , TA \mapsto \{UAV_2\} ,  EX \mapsto \{UAV_1, UAV_3\}\}
+ \end{equation}
+\end{center}
+
+
+\begin{figure}[h]
+\centering
+\input{tiks/pg.tex}
+\label{pg}
+\caption{PG static view with \textit{n} entities as executors}
+\end{figure}
+
+% REMOVED, FOR WHILE, BY THE ADVISOR.
+%To simplify, we will use the notation $\{EX\}|_{1}^n$ to represent the set of executors' program graphs $[EX_1 | EX_2 | ... | EX_n]$, where $n = |E|$ and the list of members $E$ is received by the channel system as a parameter. With this, the equation \eqref{pg01} can be rewritten as following.
+
+%\begin{equation}
+%\label{pg02}
+%    CS_{S} = [C2A | TA | \{EX\}_{1}^n]
+%\end{equation}
+
+%A proposal to model this communication process among the parallel program graphs is using a buffer structure as a first-in-first-out queue, when the communications are asynchronous, or a handshake mechanism when a synchronize is required. These communication structures are called channels \cite{baier}. 
+
+
+More generally, we leverage \textit{parameterized Chanel System} to abstract over specific instances of the PGs representing roles. Accordingly, some variables in these PGs are turned into parameters. Specifically, let $ap$ be a C2 Approach selected in $\Omega = \{Edge, De-Conflicted, Coord, Conflicted, Collab\}$, $T_0$ a set of tasks, $M$ the of all set of tasks $t$ that can be allocated,  and $E = \{e_1, e_2, ..., e_n\}$ a set of executors' FMs. Equation \ref{pg03} shows the  parameterized CS with the type definition for each parameter. 
+
+\begin{equation}
+\label{pg03}
+\begin{split}
+CS_S(ap:\omega, T_0: &\powerset(M), E:\{FM_1, FM_2, ..., FM_n\})=\\
+&=[ C2A(ap) | TA(T_0) | EX(e_1) | EX(e_2) | ... | EX(e_k) ]
+\end{split}
+\end{equation}
+
+The intended semantics is as follows. $ap$ is a C2 Approach to be used in the beginning and $T_0$ is a initial set of tasks $\{t_1, t_2, ..., t_k\}$ representing the current mission, and $E$ is the set of executors ${e_1, e_2, ..., e_n}$. To satisfy $g_0$, it is mandatory to have $(ap \in \Omega)$ and $(T_0 \subseteq M)$. For each executor $e_j$,  an instance $EX$ of PG is created. All such instances are composed like in a plain CS. In the following, we detail the abstracted PGs.
+
+
+%\begin{equation}
+%\label{pg02}
+%    CS_{S} = CS_S(ap:\omega, T_0:M, E:\{FM_1, FM_2, ..., FM_n\})
+%\end{equation}
+
+%From the above equation, we can provide specific arguments $(ap, T_0, E)$ with $E=\{e_1, e_2, ..., e_k\}$ to create a CS formed by specific instances of PG based on these arguments, which will be used to validate the initial guard of each PG. 
+
+\subsubsection{C2 Approach Selector}
+
+The PG of C2 Approach Selector ($PG_{C2A}$) is shown in Figure \ref{c2a}. It represents the C2 Approach (C2A) selection role with its elements and definitions. The element \textit{e}, i.e., the executor, which belongs to the set $E$, is represented by its FM and it has a valid  configuration $c$ such that  $c \in \llbracket e \rrbracket $.
+
+%\begin{center}
+%\begin{equation}
+%c \in \llbracket e \rrbracket 
+%\end{equation}
+%\end{center}
+
+%and this configuration represents one state of $e$ within the set of all possible valid configurations that can be employed during a given mission $T_i$ execution according to circumstance changes.
+
+\begin{figure}[h]
+\centering
+\input{tiks/c2a_selector.tex}
+\label{c2a}
+\caption{C2 Approach selector PG}
+\end{figure}
+
+ $PG_{C2A}$ uses functions $f\_remove$ and $find\_maneuver$ to encapsulate operations over variables:
+\begin{itemize}
+    \item $f\_remove$:  generates a new set of tasks $T' \subseteq T$ such that $\omega \models T'$;
+    \item $find\_maneuver$: searches for another C2 Approach ($\omega$) that is capable to execute all set of tasks $T$, so called $\omega \models T$;
+\end{itemize}
+
+Essentially, the C2 Approach selector receives a team of members, a set of tasks as a mission, and an initial C2 approach to be operated by the members during the tasks execution. Thereby, it analyses if the C2 Approach defined is suitable to the mission and, if not, it tries to maneuver to another C2 Approach and write the selection in the buffer to the next level, and tries to reallocate them among the members according to quality attributes. 
+
+\subsubsection{Task Allocator} 
+
+The PG responsible for the task allocation is shown in Figure \ref{ta}, so-called PG Task Allocator ($PG_{TA}$). It works on a list of tasks $T$ and members $E$ and finds an allocation applying the functions \textit{f\_alloc} and \textit{alloc}. This last one returns a list of pairs $[\langle k,T'_k \rangle]$ where $k$ is the index of the member $e_k \in E$, with the tasks $T'_k \subseteq T$ allocated. This list is feed by the function \textit{f\_alloc} that performs the allocation algorithm. In case of problems to allocate tasks, TA calls C2A to change C2 Approach and tries to perform a new allocation.
+
+\begin{figure}
+\centering
+\input{tiks/ta.tex}
+\label{ta}
+\caption{Task Allocator PG}
+\end{figure}
+
+\subsubsection{Executor} 
+
+The system has $n$ members in the set $E=\{e_1, e_2, e_3, ...,e_j\}$, and each executor identified as $e_k \in E$ is represented by a PG $(PG_{EX})$ that is shown in Figure \ref{executor}. Due to the fact of each executor operates with different variables values and represents different instances of PG, the  program graphs $(PG_{EX})$ that forms the global Channel System ($CS_S$) are different. In case of failure when executing a  task, the member uses channel $b_1$ to send the task $t$ to be reallocated and its own state $e$. The tasks eventually allocated are received through the individual channel $m_k$ for each member $k$.
+
+This entity $e_k$, in this work, is a representation of a DSPL, thus capable of adapting itself according to context changes. When the executor is in a configuration that is not able to perform the task at hand, the executor tries to reconfigure itself with the function $reconfig$, which tries to find another configuration $c \in \powerset(\textit{F})$ that can deal with such task.  If there is no such configuration, the executor will engage in the task allocation protocol.
+
+\begin{figure}[h]
+\centering
+\input{tiks/executor.tex}
+\label{executor}
+\caption{Task Executor PG to an element $e_k$}
+\end{figure}

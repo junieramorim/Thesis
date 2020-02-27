@@ -1,0 +1,23 @@
+\begin{table}[ht]
+	\small
+	\fontsize{6}{6}\selectfont
+	\centering
+	\caption{Network types associated to C2 Approaches}
+	\label{table:nec}
+	
+	\begin{tabular}{p{0.1\linewidth}p{0.5\linewidth}p{0.2\linewidth}p{0.1\linewidth}}
+	\hline
+		\textbf{NEC Approach (C2 archetypes)}
+		& \textbf{Archetype Characteristics}
+		& \textbf{Network Type}
+		& \textbf{Topology} \\ [1ex]
+	\hline	
+	Edge C2 & All elements are connected to everyone; There are $\frac{n(n-1)}{2}$ connections & Fully connected & Fully Connected \\[5ex]
+	Collaborative C2 & Shared resources; entities interdependence; suitable to holistic problems that can not be fully decomposed; peer-to-peer communication & Scale-free Networks (a few nodes have a very large number of connections) & Star + Fully connected \\[5ex]
+	Coordinated C2 & Suitable to problems that can be fully decomposed; share necessary information to execute what was defined & Random Networks (same probability to connect) & Star \\[5ex]
+	De-Conflicted C2 & The situation can be decomposed with no cross impact; sub-optimized; not suitable to dynamic scenarios & Small World Networks ( $\log{N}$ connections & Ring \\[5ex]
+	Conflicted C2 & No communication between entities & Isolated & - \\[1ex]
+	\hline
+	\end{tabular}
+\end{table} 
+

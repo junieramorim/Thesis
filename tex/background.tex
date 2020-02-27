@@ -1,0 +1,321 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Command and Control}
+
+The definition of C2 originally referred to the classical military strategies applied in the XIX and XX centuries, with a central commander and an inflexible hierarchical chain of command~\cite{Alberts2006}. However, this concept is totally incompatible with the modern warfare and environment, where information sharing causes impacts over the results.
+
+The \gls{DoD}~\cite{dod01} defines C2 as the exercise of authority and direction by a properly designated commander over assigned and attached forces in the accomplishment of the mission. However, this definition does not permit to identify the existence of C2 in the organization and to perform its assessment. Furthermore, it is limited in terms of research aspects and does not involves many other C2 applications in all possible contexts. It is more compatible when we have a static scenario where changes do not occur. In this case, the entities involved have predictable behavior and it is not required to have a mechanism to do a constant monitoring. 
+
+NATO extended this definition to the functions of commanders, staffs, and other Command and Control bodies in maintaining the combat readiness of their forces, preparing operations, and directing troops in the performance of their tasks~\cite{FRANCE2014}. With this, C2 becomes a concept that naturally involves a dynamic context because it empowers the system with the capacity to deal with changes in circumstances~\cite{Power01}.
+
+According to \textit{Stanton et al.}~\cite{Stanton2007} and \textit{Mason et al.}~\cite{Mason2001}, C2 relies on information and awareness sharing rather than simply data broadcast. Information needs to respect the rules and logical conditions to reach the right target and to cause the right effect. This information sharing occurs on a network structure that satisfies the context requirements, including mission details and context restrictions. 
+
+Empower the individuals on the edge of the organization, spreading the information in the right way and compatible quantity, is the new challenge to support a wider C2 definition. \textit{Alberts and Hayes} in \cite{Power01} presented the term \textit{Power to the Edge} aiming to expose the idea of take the information to all elements in the organization. It is directly related to the information and awareness spread level.
+
+The same work~\cite{Power01} presented the three key dimensions of C2: Allocation of Decision Rights, Patterns of Interaction and Distribution of Information. These dimensions, not completely independent, compose the C2 Approach Space described by \textit{Alberts et al.} in \cite{Alberts2006} show in Figure \ref{c2s}.
+
+\figura[!h]{C2_Space}{C2 Approach Space (from \cite{FRANCE2014})}{c2s}{width=0.6\textwidth}%
+
+\textbf{a) Allocation of Decison Rights (ADR)}
+
+Decision rights are the capability of some individuals to make choices related to a specific topic. The allocation of this capability aims the unity of purpose. With the ADR more distributed, the leadership changes according to the information shared.
+
+The ADR axis represents, in an endpoint, the total centralization of decision rights, and in the other end of the spectrum, the total capability to take decisions for all members. In this case, no leadership is identified.
+
+\textbf{b) Patterns of Interaction (PoI)}
+
+Basically, PoI defines the network topology used by the entities. According to \textit{Alberts and Hayes} in~\cite{Alberts2006}, it is possible to identify four different types of networks, not related to hierarchy, that makes an approach of C2 in Information age militaries.
+
+\begin{itemize}
+    \item Fully connected: every entity is connected to every other, or there is an interaction among all of them;
+    \item Random networks: each entity has the same probability of interacting with any other;
+    \item Scale-free networks: a few entities have a very large number of connections or interactions with other entities;
+    \item Small world networks: very high cluster coefficient, with a number of connections around $log(N)$, where $N$ is the total of nodes \cite{small01}.
+\end{itemize}
+ 
+The richest network structure is that mixed with different types in each level\cite{Alberts2006}. It should be the one with a scale-free in high level, the intermediate level composed by small world networks and at local level, the using of fully connected network structure.
+
+\textit{Zughe and Sun} \cite{small02} proposed a solution to represent a Small-World network using a virtual ring topology. In that work, it is presented some aspects that permits a simpler approach to represent this kind off communication strucutre.
+
+\textbf{c) Distribution of Information (DoI)}
+
+How the information is shared, following the Information Exchange Requirements (IRE) and get the shared awareness. Based on this, it is presented a conceptual model to C2 Agility, that is the capability of C2 to successfully effect, cope with or exploit changes in circumstances.\cite{ABAR201713} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection {Network Enabled Capabilities}
+
+The Network Enabled Capabilities - NCW (England) or Network Centric Warfare (USA) - NEC was created to increase the action power through a shared awareness that can be synchronized using a specific network structure and organization to create entities interaction \cite{Alberts2000}. 
+
+Based on NEC paradigm, it was identified five archetypes to C2 Approach. These archetypes are listed in Table \ref{table:nec} and are defined as \gls{C2 Strategy} with their characteristics. Each \gls{C2 Strategy} adopted is related to a certain maturity level and occupies a specific position in C2 Approach Space.
+
+\input{tables/table03.tex}
+
+The term Network Enabled Capability (NEC) looks for achieving the effect with the best usage of information systems. \textit{Alberts et al.} presented~\cite{nato01} the five NATO NEC C2 Maturity levels that represents a number of C2 Approaches to deal with different contexts as listed below.
+
+\begin{itemize}
+    \item Edge C2
+    \item Collaborative C2
+    \item coordinated C2
+    \item De-Conflicted C2
+    \item Conflicted C2
+\end{itemize}
+
+Each of these approaches corresponds to a specific region in the C2 Approach Space as shown in Figure \ref{c2s02}.
+
+\figura[ht]{C2S_02}{NEC Approaches to C2 (from \cite{FRANCE2014})}{c2s02}{width=0.7\textwidth}%
+
+These approaches are selected according to the mission and a set of circumstances. Different context requires specific \gls{C2} approaches. When some of these elements change, it is possible that some C2 approaching is not suitable anymore. The set of possible approaches available to be employed defines the Endeavor Space~\cite{FRANCE2014}.
+
+SAS-060 \cite{nato01}, by \gls{NATO}, recommended following transition rules in case of endeavor complexity  changes showed in Table \ref{table:table02}.
+
+\input{tables/table02.tex}
+
+Communications improvements conduct the entities to a C2 Approach closer to the edge. This more connected structure becomes the awareness spread easier, due to the information sharing and collaboration among entities. The network structure and robustness facilitate to share awareness among dispersed entities. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Endeavor Space}
+
+The set of all requirements, circumstances and conditions of a mission forms the endeavor space. It is created when all possible changes in circumstances that may cause impacts in an entity, and these possibilities are systematically identified and mapped ~\cite{FRANCE2014}. 
+
+Precisely, the Endeavor Space is identified during planning time to try to preview the changes in circumstances as more precise as possible. It reduces the inherent uncertainties during mission execution~\cite{FRANCE2014}.
+
+Each region of the endeavor space requires an option in C2 Approach Space to deal with the challenges and to perform the mission given. Different circumstances and other context changes implies in different regions in endeavor space.
+
+A computational view of endeavor space is a search space to the C2 functions application. At different moments, these functions have a specific region of endeavor space as domain values, that conduct to the result or objective, e.g., mission accomplishment. The area formed by the sum of all regions where an entity operates defines the entity's agility in a general way \cite{Alberts2011}.
+
+Based on the domain studies, these changes in circumstances that conduct to different endeavor space positions and these changes can be divided in three different areas: self, environment and mission~\cite{Alberts2006}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection {Functions of C2}
+
+A C2 application permits the identification of some related functions that are required in order to apply C2 concepts and principles~\cite{Alberts2006}. These functions are listed bellow and are applicable to many endeavor types (military, civilian and industrial). They are related to C2 and describe the steps to be fellow:
+\begin{itemize}
+    \item Establishing intent
+    \item Determining roles
+    \item Establishing rules and constraints
+    \item Monitoring and assessing the situation and the progress
+\end{itemize}
+
+However, it is necessary to consider the leadership factor. How the commanders or managers are good as leaders guiding the team to the mission or task accomplishment. To this aspect, it is necessary to add the following functions:
+
+\begin{itemize}
+    \item Inspiring, engendering trust and motivating
+    \item Training and education
+    \item provisioning
+\end{itemize}
+
+These three last functions are related to human aspects and behaviors. They depend on the actor that are as commander or manager.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection {\gls{C2 Agility}}
+
+Agility can be defined as a capability to deal with different circumstances, adapting to new requirements, to continue the tasks execution. Figures \ref{graph01} and \ref{graph02} depict situations where the identification of abnormalities was not effective and results were out of acceptance level. \textit{Alberts et al.}~\cite{Alberts2011} defines agility of an entity as the area inside the endeavor space that it is capable to act according to the requirements.
+
+\figura[!h]{graph01}{Lack of agility demanding a long time to react to an abnormality (adapted from \cite{FRANCE2014})}{graph01}{width=.8\textwidth}%
+\figura[!h]{graph02}{Agility characterized by a fast response under circumstance changes (adapted from~\cite{FRANCE2014})}{graph02}{width=.8\textwidth}%
+
+To be considered agile, the Entity must to be able to detect an event and to adopt some action to keep results in satisfactory levels. This indicates an Entity's responsiveness compatible with dynamic \gls{context}.
+
+\gls{c2agility} is a function of C2 approach agility and \gls{C2 Maneuver} agility and represents the capability of an entity to adapt itself to deal with different circumstances. This adaptation can be done through a fine tune with no C2 Approach change to improve capabilities, featuring what is shown in Figure \ref{fig100}. In case of adaptation within the same C2 Approach, this adaptation can be expressed as an entity reconfiguration or tasks reallocation.
+
+However, the new circumstance can require a deeper adaptation and in this case, a C2 Approach change will occur to deal with new requirements. Figure \ref{fig101} represents this last agility where it is mandatory to perform a C2 maneuver as fast as possible.
+
+To provide C2 Agility, it is fundamental a fast \textit{sensemaking} \cite{Power01}, i.e., situational awareness, to get a right decision into the scenario to execute the right actions aiming to solve the problems. It is a requirement to any action to be adopted in a real situation. In a automated system, it is obtained by sensors able to get information from the environment and from themselves to adapt the system according to the circumstance changes. 
+
+\figura[!h]{fig100}{C2 Approach Agility satisfying new requirements with no C2 Approach change}{fig100}{width=.6\textwidth}%
+\figura[!h]{fig101}{C2 maneuver performing a C2 Approach change due to new circumstances}{fig101}{width=.6\textwidth}%
+
+To guarantee C2 Agility, it is necessary to have situation awareness and self-monitoring. These two elements permit C2 Approach changes within the C2 Approach Space according to the circumstances. NATO NEC Maturity Model divided the C2 approach space in five regions as cubes that corresponds to specific C2 approaches that can be adopted~\cite{FRANCE2014}. 
+
+All entities have a set of possible C2 Approach that can be adopted during context changes to satisfy new requirements. This capacity is expressed as the ability to recognize the context changes and the incompatibility of the C2 Approach currently applied, tto identify an adequate C2 Approach according to the new circumstance, and to change to this new C2 Approach selected within the time slice previously defined. Figure \ref{c2sm} shows the common movement inside the C2 Approach Space changing the C2 Approach adopted to deal with new circumstances.
+
+\figura[ht]{C2_Space_M}{C2 Approach changes within C2 Approach Space (from \cite{FRANCE2014})}{c2sm}{width=0.6\textwidth}%
+
+The C2 agility can be improved if the capacity to switch between different C2 Approaches is increased. The C2 Approach adopted is related to the endeavor space complexity, being more connected, e.g., Edge, when that complexity gets higher.
+
+Equation \ref{c2a1} shows the C2 agility metric representation, proposed by \textit{Alberts}~\cite{Alberts2017}, by the relation between the endeavor space were the entities are able to act, and the total endeavor space area. The endeavor space portions \textit{S1, S2} and \textit{S3} are three regions inside the endeavor space that the entities can act according to some quality parameters, e.g., effectiveness and timeliness. 
+
+\begin{equation}
+\label{c2a1}
+ C2_{metric} = \frac{S1 + S2 + S3}{endeavor\ space}  
+\end{equation}
+
+The maturity levels presented by NATO in SAS-065 report~\cite{nato01}, i.e., the five C2 Approaches previously mentioned, represent the ability of an entity or a group of entities to change the C2 Approach under circumstances changes. However, the first step to perform a maneuver within the C2 Approach Space is to identify what is the current position in this space. C2 Agility will guarantee the right position in the C2 Approach space during the mission execution under context changes. When the circumstances' requirements cause a significant location change within the endeavor space, there is a mapping to a different region and consequently we have a C2 Approach modification. 
+
+In C2, the \gls{agility} is linked with agile forces and operational concepts. The six components of agility, that combines agile individuals, organizations and C2 Systems, are listed bellow~\cite{Power01}:
+
+\begin{itemize}
+    \item \textbf{Robustness:}it is the ability to maintain the effectiveness across a range of tasks, conditions and situations;
+    \item \textbf{Resilience:} it is the ability to recover or adjust from a damage or perturbation in the environment;
+    \item \textbf{Responsiveness:} it is the ability to react to a change in the environment in a suitable interval of time;
+    \item \textbf{Flexibility:} it is the ability to employ multiple ways to succeed and the capacity to switch between these ways;
+    \item \textbf{Innovation:} it is the ability to do new things or in different ways;
+    \item \textbf{Adaptation:} it is the ability to change the organization or the processes.
+\end{itemize}
+
+These components are called agility enablers, and the combination of these enablers in different levels provide a given agility capacity\cite{FRANCE2014}.
+
+C2 Agility relates the entities available and the mission challenges with a correct C2 approach for each situation. In dynamic scenarios, this agility is required to keep the mission execution. The changes of C2 approaches defines the maneuver in C2 space. This ability to maneuver in the C2 Approach Space involves the significance recognition of circumstance modifications that affect the effectiveness of an approach, and the necessity to change another one more suitable to the new situation.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Self-Adaptive Systems}
+
+Laddaga et al. in \cite{SAS01} presented the following definition to self-adaptive system (SAS):
+
+\textit{``Self-adaptive software evaluates its own behavior and changes behavior when the evaluation indicates that it is not accomplishing what the software is intended to do, or when better functionality or performance is possible.''}
+
+This definition comes from self-management software \cite{SAS02}, where it is not necessary an administrator to manage the system. This aspect brings four properties inherent of these systems:
+\begin{itemize}
+    \item \textbf{self-configuration:} the system is able to configure itself according to policies and requirements from the environment;
+    \item \textbf{self-optimization:} the system adjusts the adaptations to obtain the best possible results and improve its performance;
+    \item \textbf{self-healing:} the system is capable to identify and to correct possible problems occurred;
+    \item \textbf{self-protection:} the system is capable to protect itself against attacks and threats.
+\end{itemize}
+
+A self-adaptive system requires a structure to perform all logical operations to execute its adaptation. This structure can be external or internal if compared with the system core \cite{SAS03}. When the adaptation logic is part of the main system, it is classified as internal. It is external when the adaptation logic is a separated module or component. 
+
+In the external structure, the maintainability is higher and it is easier to reuse and exchange components. On the another hand, the internal adaptation is faster but it is more dependent of the main system. However, both kind of structure work as a core in the SAS and are essential to its functionality.
+
+\textit{Cheng et al.}~\cite{SAS04}~\cite{Cheng2009} uses feedback loops as these structures to implement a SAS. These loops are formed by states that collect information from the environment and/or system and plan an execution to adapt itself, if necessary, according to the new situation. A generic and well known loop used by that work is the MAPE cycle, defined by the stages: \textit{Monitor}, \textit{Analyze}, \textit{Plan}, and \textit{Execute}.
+
+\begin{itemize}
+    \item \textbf{Monitor:} collect data from all managed elements;
+    \item \textbf{Analyze:} process all data collected applying metrics and constraints;
+    \item \textbf{Plan:} defines necessary changes to get the best results or to fix some issue identified in the previous phase;
+    \item \textbf{Execute:} executes the plan developed to adapt the system.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Software Product Line}
+
+Apel et al. \cite{SPL10} defines a Software Product Line (SPL) as following:
+
+\textit{``Software product line is an approach that provides a form of mass customization by constructing individual solutions based on a portfolio of reusable software components. It introduces individualism into software production, but still retains the benefits of mass production in that whole domain and market segments can be served.''}
+
+It is a paradigm of product generation from a set of common artifacts, e.g., source code, models and documentation. SPL is an approach used to model a SAS~\cite{SPL10} and  it is based on reusability concept. It provides an way of mass customization, satisfying requirements and creating final products more specific to the user needs. Through this process, the bind time, i.e., time of components combination, occurs before the runtime.
+
+The SPL has two lifecycles as seen in Figure \ref{spl01}. The Domain Engineering defines the commonality and the variability of the product line based on the domain aspects, rules and requirements. It defines the common and exchangeable parts of the system, guarantying the creation of reusable artifacts with traceability. Application engineering relates the software product to the reusable domain specific artifacts, exploring the capability to generate products from a common base of components and/or artifacts.
+
+\figura[!h]{spl01}{SPL lifecycles (from original in \cite{SPL10})}{spl01}{width=1\textwidth}%
+
+An example of SPL is the Linux, an Operating System with many features that are enabled according to the hardware and platform where it will run~\cite{Apel2013}. During installation, the OS is configured according to the operation environment, and it permits a single system be able to support different platforms and scenarios, being customized under user needs.
+
+
+With SPL, we can tailor a product to different individual customer, simply activating features and resources, permitting a mass customization. Furthermore, as it is based on reusable artifacts, we can reduce costs of development and improve the quality of the final products. These aspects become the product generation more agile.
+
+According to \textit{Apel et al. }~\cite{Apel2013} the feature (F) is a characteristic or a visible behavior of a software system. The product generation using a SPL is basically a selection of features that satisfies some constraints and dependences between them. The $\powerset(\textit{F})$ is a set of all products from a set of features \textit{F} existing in a SPL. Feature Model (FM) is the artifact where all these features of a product line, with their relationships, are represented. Figure \ref{FM} shows an example of FM.
+
+\figura[!h]{FM}{A Feature Model example}{FM}{width=.8\textwidth}%
+
+The FM shows the constraints between features and the level of obligation to select some feature. Concrete features are those that will be implemented and characterize a system function accessed by the user. The abstract ones are used to group and organize concrete features. Alternative symbol indicates the option to select, at least, one feature in the group. In another hand, the optional symbol that differs from the alternative one by an arc painted, turns mandatory the choice of only one feature in the group.
+
+We can group more than one SPL generating individual products that will be combined to generate composed systems. This composition of interdependent SPL managed in a decentralized way defines a Multi Software Product Line (MPL) \cite{Lienhardt2018}.
+
+The principle of SPL is generate products in less time with reuse, high quality and with additional functionality. However, it is not possible to foresee all functionality of the SPL and this variability would require all possible products generation, being unfeasible. In this way, to involve aspects of runtime adaptable systems, it is presented the Dynamic Software Product Line (DSPL) paradigm that is capable to adapt itself according to new user requirements or constraints during system execution~\cite{DSPL100-1}.
+
+While SPL has a binding time before runtime, the DSPL can be seen as a system able to adapt itself during execution according to changes in requirements and needs. Different of SPL where we have an entire product line with all its variability, the DSPL works as a single product with adaptation capability according to the changes that occur in runtime ~\cite{Hinchey2012}.
+
+A DSPL execution in a dynamic scenario can be seen as a sequence of valid configurations adopted in runtime aiming to continue the execution of the system. Figure \ref{dspl01} describes this set of all states, that represents possible valid configurations obtained from the FM.  In this case, each valid configuration presented on the valid configuration space is linked with an arrow that indicates which possible adaptation can occur in runtime according to context modifications. 
+
+\begin{figure}[h]
+\centering
+\label{dspl01}
+\scalebox{.5}{\input{tiks/states.tex}}
+\caption{DSPL reconfiguration with context changes}
+\end{figure}
+
+Basically, DSPL is an approach to SAS that can be incremented with a feedback loop to deal with constant environment and requirements change that were not previewed at design time \cite{SAS100-04}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Program Graph}
+
+The model used to represent the behavior of a system is called Transition System (TS). It is a representation of all possible states that a system can reach during the execution. A TS can be written as tuple show in Equation \ref{TS01} .
+
+\begin{center}
+\begin{equation}
+        TS_{k} = (S, Act, I, \longrightarrow, AP ,L)
+        \label{TS01}
+    \end{equation}
+\end{center}
+
+where $S$ is the set of states that the system can adopt. The $Act$ represents a set of actions executed where the system changes its state. The $I \subseteq S$ is the initial states set. The transition relation $(\longrightarrow \subseteq S \times Act \times S)$ links valid states representing these changes. The set of atomic propositions $AP$ manipulated by the constraints formulas. And the labels set $L$ is labeling function that assigns identifiers to the states, and is defined as $L:S \longrightarrow 2^{AP}$.
+
+The behavior of a TS that starts in a initial state $s_0 \in I \subseteq S$ can be represented as $s_i \xrightarrow[]{\alpha} s_j$ where $s_i$ is the current state, $\alpha \in Act$ is the action that conducts to the new state $s_j$. In addition, we can have data-dependent system, where the action depends on the results of some conditional expression in the form $s_i \xrightarrow[]{g:\alpha} s_j$ where $g$ is a Boolean typed and called guard condition. The TS will be resulted from unfolded graph with all possible paths according to the boolean expression result\cite{baier}.
+
+However, the representation using TS can be unfeasible due to the number of all possible states that a component can adopt. Thereby, we will use Program graph representation to turn able a whole view of the system and execution steps. It is an abstraction which encapsulates the conditional expression with data dependence. A Program Graph (PG) is applied over a set of typed variables and it is represented by the following tuple:
+
+\begin{center}
+    $(Loc,Act,Effect,\lhookrightarrow,Loc_0,g_0)$
+\end{center}
+
+where,
+
+\begin{itemize}
+	\item $Loc$ is a set of location  
+	\item $Act$ is a set of actions
+	\item Effect is a function whose type is $Act \times Eval(Var) \to Eval(Var)$
+	\item $\lhookrightarrow$ is the conditional transition relation defined by $Loc \times Cond(Var) \times Act \times Loc$
+	\item $Loc_0 \subseteq Loc$ is the set of initial locations
+	\item $g_0 \in Cond(Var)$ is the initial condition
+\end{itemize}
+
+However, in modern computation we do not have a sequential execution of a number of PGs. Normally, we have a set of processes represented by program graphs that run in a parallel way. Based on this, the PGs must be able to run in parallel and, in some cases, to be able to synchronize with each other. We can have the PGs running synchronously, i.e., performing a handshaking, or asynchronously, i.e., via a buffer under \textit{first-in, first-out} policy.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Channel System}
+
+A CS is a composition  of Program Graphs (PG) exploring the parallelism and communication exchanging data, i.e., sending messages, between them using communication structures called \textit{channels}\cite{baier}. This structure is called Channel System and is formed by a set of PGs extended with communication actions. The two possible operations over the channels are done with the following communication actions (from \cite{baier}):
+
+\begin{itemize}
+	\item $c!v$ is the transmission of value $v$ through the channel $c$ 
+	\item $c?v$ is the receiving of value $v$ through the channel $c$
+\end{itemize}
+
+The capacity of the channel $c$, i.e., $Cap(c) \in \mathbb{N} \bigcup \{\infty\}$, defines if it is synchronous or asynchronous. A channel with the capacity equals to zero is synchronous, i.e., represents a handshaking between processes, where the transmitter process wait for the receiver reading. In that way, only one value is exchanged between two processes per time. On the other hand, an asynchronous channel has the capacity greater than zero and the process that sends the value does not need to wait the receiver process read the value written. In this case, the buffer that represents the channel works as a short memory where the process store values that will be manipulated by any other process later. This buffer works as a \textit{first-in-first-out} queue and, as long as the number of values written in the buffer is less the its capacity, it will be possible to add new values. 
+
+With the communication resource integrated, we can define a PG over a set of variables $Var$ and a set of Channels $Chan$ as the same previous tuple $(Loc,Act,Effect,\lhookrightarrow,Loc_0,g_0)$ but with the following difference in the $\lhookrightarrow$ element:
+
+\begin{center}
+    $\lhookrightarrow \subseteq (Loc \times (Cond(Var) \times (Act \bigcup Comm) \times Loc)$
+\end{center}
+
+where \textit{(Act $\bigcup$ Comm)} extends the actions set with the communication actions described before. By combining a set with $n$ parallel PGs such that each $PG_i$ over $(Var_i, Chan)$, where $1 \leq i \leq n$, composes a Channel System (CS) over the set $(Var, Chan)$ defined as following.
+
+\begin{center}
+    $CS=[PG_1 | PG_2 | ... | PG_n]$
+\end{center}
+
+The $Var$ set of CS is defined as $\bigcup_{1 \leq i \leq n}Var_i$, i.e., the combination of all $Var_i$ sets of each $PG_i$ that composes the CS.

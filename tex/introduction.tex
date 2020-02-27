@@ -1,0 +1,96 @@
+\section{Context} \label{sec:context}
+
+% TODO: please ensure we do the following (and nothing else) in this subsection
+% - present a single up-to-date and standalone definition of C2
+% - give some examples of what C2 is
+% - argue why and to whom C2 is important
+% - motivate and define agility
+
+% I tried to follow the philosophy above, but please check. I also feel a lot of text can be removed
+% because it does not contribute to the goals above.
+
+Command and Control (C2) can be defined, in a way compatible with the 21th Century, i.e., \textit{Information Age}, as a process or procedure, based on the exchange of information and awareness, for the proper application of resources aiming at the execution of a task or mission~\cite{Power01}. It is not an end in itself, but rather a high level control of the situation, resources, and planned execution. 
+
+C2 is pervasive across and essential in modern society, with  application scenarios from finances to military operations. For instance, C2 is applied in many common situations related with our daily routine, e.g., traffic coordination with application of Traffic Department to act in problematic situations. As another example, more recently some organizations coordinate a large scale operation to deal with the oil spill in the Brazilian coastline. In this case, the Brazilian Navy, as the coordinator, together with \gls{IBAMA} and research centers, try to figure out what really happened and trying to mitigate the damage to the environment. Yet another example is a set of federal organizations, coordinated by the Brazilian Army, performing an operation to fight against the forest fire in the Amazon Region. All these operations aim to apply resources efficiently to perform the mission established, with a C2 Approach selection and application.   
+
+C2 is tightly linked to information sharing level, defined by the connectivity level, and distributed responsibilities~\cite{Power01}. This new structure keeps the same objectives, i.e., best resources utilization to accomplish a mission according to the imposed restrictions~\cite{c2_01}.
+
+\textit{Alberts et al.}~\cite{Alberts2000} extended the C2 system definitions based on the networked structure, awareness and information sharing, with the C2 Approach Space concept. This space is limited by three axis which defines the level of distribution information, the patterns of interaction between the elements and how the decision rights are distributed among the system elements. Any position within this space defines a C2 approach applied to the members group. \textit{Alberts et al.}~\cite{Power01} shows important elements related to C2 in \textit{Information Age}, listing five main C2 Approaches, i.e., edge, coordinated, collaborative, de-conflicted and isolated, that can be adopted during mission accomplishment, depending on the level of interaction between the team elements.
+% TODO: please check in the above paragraph if it is really necessary to list the specific C2 Approahces. 
+% I understand that the paragraph only needs to explain what a C2 Approach is.
+%%%%
+%%%%
+%%%%%
+%%%%% COMMENT: {I would like to keep them}. Explain better what C2 Strategy is (a specific selection of c2 strategy is ..... see reference networked)
+%%% put together with previous parag
+The scope of C2 can be broad and involve different elements beyond the technology, as shown by \textit{Fernandes et.al.}~\cite{Fernandes2016}. In this work, we focus on homogeneous forces. 
+
+In the military domain, the capacity to incorporate new elements, to adapt the teams and members for a new situation, or even to change the structure and procedures to permit the adaptation to a new condition is a basic requirement to perform a mission successfully. However, modelling and identifying the scenario with all possibilities and members is not a simple activity and nowadays it is over simplified due to its natural complexity. Further, this simplification hides important aspects that can be crucial to the mission accomplishment.
+
+To keep C2 adaptation ability, it is mandatory to have the capacity to monitor and to share information on  context changes. Any kind of modification in the scenario, in the members, or even in the mission to be performed, is important and must be monitored in order not to loose the team focus and do not have results degradation, aiming at the best resources allocation as shown by North Atlantic Treat 
+Organization (NATO)~\cite{FRANCE2014}. 
+
+According to the NATO Reports~\cite{FRANCE2014}, \textit{agility} is the capability to successfully effect, cope with and/or exploit changes in circumstances. Change in circumstances are defined as change in the state of other entities, in the environment, in  itself state or any combination of these three options. Additionally, \textit{Agility in C2} is defined as the composition of C2 Approach Agility, where the elements find a configuration of capabilities to solve the problem with no C2 Approach change, and C2 Maneuver Agility, where the situation requires a C2 Approach change in the C2 Approach Space.
+
+Agility to deal with different circumstances is the most important aspect to obtain success, particularly in the Information Era, and C2 comes as an important element to the organizations get agility attribute. However, the agility by itself does not guarantee effectiveness, i.e., mission accomplishment, because it is mandatory an intelligence in resources application and operation. In this case, the agility becomes a necessary attribute but not enough one \cite{Power01}.
+
+
+\section{Problem and Motivation} \label{sec:problemMotivation}
+
+Agility is a relevant and timely C2 issue~\cite{FRANCE2014,c2-02}. Indeed, the main objective of a C2 strategy is to deal with circumstance changes, which require agility for effective and efficient mission execution. 
+Given inherent resource limitation in all operations, this requires measurement procedures to identify deviation and to adjust the execution according to context changes, keeping results into expected quality levels. 
+
+Nevertheless, the most recent and more complete study about C2 Agility does not consider quality attributes and any cost values during analysis and simulations~\cite{FRANCE2014}. Such work explored  agility analysing results from simulation and retrospectively from real operations where C2 approaches were applied to obtain results. The assessment focused on mission accomplishment exclusively. Furthermore, models used therein consider only static aspects and they show limitations to represent the dynamic dimension that exists in C2 context problems. These characteristics highlight an important gap when compared with real scenarios. 
+
+Additionally, \textit{Tran et al.}~\cite{c2-02} presents an evaluation of C2 Agility with network adaptation analysis. Furthermore, agility is limited to the capacity of adaptation in network structure, not extended to the team members themselves.
+
+In the C2 domain, cost cannot be ignored. Precisely, C2 application looks for to increase results and this improvement is only identified through measurements and quality attributes definition and identification. At this point, the right quality attributes identification is a challenge by itself.
+
+Given this landscape, we can identify the following research problems that guide this study:
+
+\vspace{10}
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \begin{itemize}
+            \item Problem #1 (P1): Current approaches about C2 that provide C2 Approach Agility have some limitations to address Quality Attributes (QA);
+            \item Problem #2 (P2): Current studies do not present approaches that provide C2 Maneuver Agility  within quality levels desired;
+        \end{itemize}
+    }%
+}
+\vspace{10}
+
+Under the two research problems previously presented, we can enumerate the motivations previously identified and summarize them in Table~\ref{table:table05}. These problems define our research questions and guide our work. 
+
+\input{tables/table05.tex}
+%%%% TODO FUTURO Reintegrar a tabela com o texto, explicando as relações e motivações.
+
+
+\section{Solution Proposed} \label{sec:solutionIntro}
+
+C2 can be modelled  as an input/output system~\cite{Alberts2006}, where control is an input mechanism to obtain information from the environment and from other elements, and command represents the output process acting over the environment based on information obtained to accomplish a mission. As the real scenarios involved in C2 are completely dynamic and plain of uncertainty, these aspects increase the complexity to model and to predict results. This resembles SAS~\cite{Hallsteinsen2012} and Dynamic Software Product Lines (DSPLs)~\cite{BencomoHA12}.
+
+Accordingly, to address the aforementioned research problems, we propose a SAS-based process to provide C2 agility. In this process, we concretely model the C2 executing members in as Dynamic Software Product Lines (DSPLs). Their \gls{context} is defined by the environment where the system is, the tasks or activities to be done and the status of the entities. Changes in any of these elements can trigger a single or multiple component  adaptation. DSPL representing C2 members are able to configure themselves aiming to adapt to a new circumstance while still keeping quality levels within acceptable bounds.
+
+Additionally, the inherent need for awareness sharing in the C2 domain requires that the DSPLs representing C2 members  interaction between themselves. Therefore the DSPLs coordinate and (re)configure in a complementary way. This way, an optimized C2 strategy adoption to define the interaction among elements of a team represented by autonomous systems. To accomplish such coordination and configuration, we introduce the new concept of \textit{Multi Dynamic Software Product Lines} (MDSPL).
+
+Moreover, this study proposes an analysis and measurement framework of C2 Agility over the MDSPL model representing a set of members performing a set of tasks and interacting between them to deal with any context change that can occur. Quality Attributes (QA) identification with a correct metrics adoption is performed.
+
+\section{Evaluation} \label{sec:evalIntro}
+
+We will evaluate the proposed solution empirically. We will conduct interviews with domain experts in the industry, who will  empirically evaluate and validate the solution proposed, checking if the modelling satisfies the domain requirements and constraints. Additionally, aiming at evidence on whether the proposed solution can be applied in real scenarios, we also plan to perform a survey with domain specialists, who will assess the consistence between our approach and real scenarios. This process will help us to verify if all properties of interest are being contemplated by the model proposed. Furthermore, we will perform simulations in agent-based tools to assess achieved C2 Agility provided by our process. 
+
+% REMARK: I commented below, since GQM is used internally in the other employed evaluation methods.
+%A Goal-Question-Metric (GQM) approach is applied to analyze the relation between the problems and solutions and if we got all responses and right metrics identification. This is required to permit a right measurement during simulations.
+
+\section{Proposal Structure} \label{sec:structureWork}
+
+%TODO: please follow the style in Thiago's proposal.
+The remainder of this work is organized as follows:
+
+\begin{itemize}
+    \item Chapter \ref{background} presents a review of all main concepts and definitions required to proceed the discussion about the problems and the solution proposed.
+    \item Chapter \ref{related} makes a state of the art description, focusing on C2 and DSPL related works, that were used to justify this study and to motivate the research and problem solution;
+    \item Chapter \ref{development} concentrates the topics detailing the problem, the solution proposed and the  evaluation planned. It describes the new definition so-called MDSPL in Section \ref{sec:solution}, the structure used as feedback loop in Section \ref{sec:behavior}. The model proposed with its structure is described in Section \ref{sec:validation}. Besides we characterize and describe the roles and responsibilities in the C2 System modelled in Section \ref{sec:solution} and the model behavior in Section \ref{sec:behavior}. The Evaluation is describe in Section \ref{sec:validation}.
+    \item Chapter \ref{next_steps} gives a brief overview about the planning to be executed to reach all results aimed.
+    
+\end{itemize}

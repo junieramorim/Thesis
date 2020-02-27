@@ -1,0 +1,43 @@
+Based on the definition of agility in the C2 context, the question "How to provide C2 agility?" is not completely explored and answered due to all complexity involved. The evidence found by NATO~\cite{FRANCE2014} in study cases and simulations is limited and they represent the state of the art and practice related to this subject. In particular, the C2 agility definition is inaccurate to explore the aspect of successfully and to address any notion of cost as a Quality Attribute (QA).
+
+Indeed, to provide C2 Agility in dynamic scenarios in which members are performing a mission, it is necessary to guarantee efficient management of available resources to deal with context changes. The ability of the members to adapt themselves according to information received or obtained from the environment via sensors permits the system to keep running even under new circumstances. The challenge is adapting and maintaining quality attributes within acceptable levels.
+
+Based on the state of the art on C2 Agility (cf. Chapter \ref{related}), considering the simulation context of \textit{in silico} and \textit{in virtuo} experiments\cite{simulation01}, we recall the two research problems mentioned in Chapter~\ref{introduction}:
+
+\begin{itemize}
+    \item (P1) Current works about C2 Approach Agility are limited;
+    \item (P2) There is no evidence about C2 Maneuver Agility.
+\end{itemize}
+
+In particular, our focus is the software simulation based in \textit{in silico} experiments~\cite{simulation01}, where the environment, subject behavior and objects are computational models.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+In particular, one dimension of this gap is failing to address any notion of cost. In contrast, in real world C2  scenarios, cost is one of the most relevant aspects to be considered when assessing not only QAs but also mission feasibility. 
+
+As these problems are wide and complex, we employ the Goal Question Metric (GQM) approach~\cite{gqm1} to guide the research questions identification and refinement. Figure~\ref{gqm} shows the three identified research questions. We omit the metrics, since these will be refined in the future and considered in the context of evaluation.  
+
+Problem P1 motivates Research Question Q1. Indeed, Problem P1 summarizes the existing lack of QA measurement studies in scenarios where there is C2 Approach Agility, i.e.,  members adapt themselves but with no C2 Approach change. Current research addressed in Chapter~\ref{related} essentially deals only with mission or tasks accomplishment. Our base work, i.e., NATO Report~\cite{FRANCE2014}, considered as the state of the art in such analysis, did not consider any quality attribute, which simplified the employed simulation scenarios.
+
+Problem P2 motivates Research Questions Q2 and Q3. In case of required change in the C2 Approach to deal with new circumstances, defined as C2 Maneuver Agility, current research does not present evidence on enabling this nor satisfying required QA levels. Indeed, simulations and observations conducted previously~\cite{FRANCE2014,Alberts2017,c2-02} only identify the need for C2 approach change, without describing any enabling mechanisms, and only address mission accomplishment. Cost considerations are ignored.
+
+\begin{figure}[h]
+\centering
+\label{gqm}
+\scalebox{.6}{\input{tiks/gqm.tex}}
+\caption{GQM identifying Research Questions}
+\end{figure}
+
+Aiming at a more fundamental view on these research questions, we trace them to the agility enablers described in Chapter~\ref{background}, as indicated on Table~\ref{table:table06}. Correspondingly, flexibility, adaptability, and resilience are required to answer all the three questions, since they assure the system's ability to adapt according to new circumstances. Responsiveness provides required timely reaction and self-adaptation, whereas robustness promotes the system's ability of remaining in its initial configuration while maintaining  effectiveness even under perturbations or circumstance changes.
+
+\input{tables/table06.tex}
+
+%According to the aforementioned, there is the necessity of be able to analyze quality aspects in C2 context. Furthermore, it is not enough be agile in terms of fast execution, but it is necessary to keep results within requested levels and based on a constant monitoring and acting process. Analysis made by NATO considers only the mission completeness.

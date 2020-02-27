@@ -1,0 +1,18 @@
+The scenarios involving C2 applications in real world are extremely complex because they are formed for many elements and variables that can change many times in runtime. The circumstances that define a particular scenario can be totally different in a short time. These aspects become the model complexity high and is mandatory to limit some possibilities and to consider assumptions.
+
+A main assumption is that the system is always operating a C2 Approach. If there is a critical issue, at least the approach Conflicted is adopted during the mission execution. This selection is done by a role, i.e., \textit{C2 Approach Selector}, and this role is performed by an element in the team or by a central command. It is compatible with the domain rules~\cite{nato01}~\cite{FRANCE2014}.
+
+The C2 Approach in its three dimensions defines the way of interaction between the members and the autonomy level of each one. Since the principles of a C2 System is to be able to adopt different portions within the C2 Approach Space in order to deal better with a new context, the C2A role uses the information about the team status to define which approach is the most suitable.
+
+Furthermore, the following assumptions are considered in this work:
+
+\begin{itemize}
+    \item There is only one member with the C2 Approach Selector (C2A) role;
+    \item The C2A role can be performed by an external member, e.g., a central command;
+    \item 
+\end{itemize}
+[[The ping action in TA PG performs a check to see if the nodes, i.e., the executors, are alive and available to communicate as well as to get status information to execute the best possible task allocation. This action is performed according to the communication structure between the elements (not represented in CS).]
+
+[[The C2 Approach adopted defines the communication structure used and permits the status exchanging. This communication structure is not represented in CS. The channels between task allocator member and executors work as buffers and they can be transmitted from a member to another depending on the existing communication structure.]
+
+[[As an example, let's consider the TA writing some tasks to be performed by member three and its real communication is only with the first member. This information will be retransmitted up to the third one].

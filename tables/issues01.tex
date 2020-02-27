@@ -1,0 +1,29 @@
+% \usepackage[normalem]{ulem}
+% \usepackage{tablefootnote}
+% \usepackage{colortbl}
+
+
+\begin{table}[h!]
+\centering
+\fontsize{11}{11}\selectfont
+\label{table:scenarios}
+\begin{tabular}{|l|l|l|} 
+\hline
+\multicolumn{3}{|c|}{{\cellcolor[rgb]{0.753,0.753,0.753}}\textbf{Self} }\\ 
+\hline
+\multicolumn{3}{|c|}{\textbf{Sensor } }\\ 
+\hline
+\begin{tabular}[c]{@{}l@{}}1. Select C2A\\2. Task allocation\\3. Member configuration\\4. Task execution\\\textbf{\uline{5. Sensor issue}}\\\textbf{\uline{6. Member reconfiguration}}\\7. Task execution\\8. Success report \end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}1. Select C2A\\2. Task allocation\\3. Member configuration\\4. Task execution\\\textbf{\uline{5. Sensor issue}}\\\textbf{\uline{6. Task reallocation}}\\\textbf{\uline{7. Member configuration\tablefootnote{Come configuration can be required in order to deal with the new tasks received after reallocation;}}}\\8. Task execution\\9. Success report \end{tabular} & \begin{tabular}[c]{@{}l@{}}1. Select C2A\\2. Task allocation\\3. Member configuration\\4. Task execution\\\textbf{\uline{5. Sensor issue}}\\\textbf{\uline{6. C2A selection\tablefootnote{In case of no solution with a reallocation, the problem is escalated to the C2 Approach selector;}}}\\\textbf{\uline{7. Task allocation}}\\\textbf{\uline{8. Member configuration}}\\9. Task execution\\10. Success report \end{tabular}             \\ 
+\hline
+\multicolumn{3}{|c|}{\textbf{Member} }\\ 
+\hline
+\multicolumn{2}{|l|}{\begin{tabular}[c]{@{}l@{}}1. Select C2A\\2. Task allocation\\3. Member configuration\\4. Task execution\\\textbf{\uline{5. Member issue}}\tablefootnote{In case of a member loosing and its tasks will be reallocated;}\\\textbf{\uline{6. Task reallocation}}\\\textbf{\uline{7. Member configuration}}\\8. Task execution\\9. Success report \end{tabular}}& \begin{tabular}[c]{@{}l@{}}1. Select C2A\\2. Task allocation\\3. Member configuration\\4. Task execution\\\textbf{\uline{5. Member issue}}\tablefootnote{the loss of any member will be staggered to a new C2 Approach selection;}\\\textbf{\uline{6. C2A selection}}\\\textbf{\uline{7. Task allocation}}\\\textbf{\uline{8. Member configuration}}\\9. Task execution\\10. Success report \end{tabular}  \\ 
+\hline
+\rowcolor[rgb]{0.753,0.753,0.753} \multicolumn{1}{|c|}{\textbf{Mission} }& \multicolumn{2}{c|}{ \textbf{Environment}}\\ 
+\hline
+\multicolumn{1}{|c|}{\textbf{Add/Remove Task}}& \multicolumn{1}{c|}{\textbf{Weather}}   \multicolumn{1}{c|}{\textbf{Hazard}}\\ 
+\hline
+\begin{tabular}[c]{@{}l@{}}1. Select C2A\\2. Task allocation\\3. Member configuration\\4. Task execution\\\textbf{\uline{5. Tasks added/removed}}\\\textbf{\uline{6. Task reallocation}}\\\textbf{\uline{7. Member configuration}}\\8. Task execution\\9. Success report \end{tabular} & \multicolumn{2}{l|}{Assumption: the same possibilities of Self changes}\\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,76 @@
+In this chapter, we will present all main bibliography related to our research that worked as inspiration to identify the problem and knowledge required to propose the solution. The literatures and their ideas are divided in three groups. These groups address C2, DSPL, Simulation and Channel System consecutively.
+
+\section{C2}
+
+\textit{Alberts et al.}~\cite{Alberts2006} describes C2 not as an end by itself, but a way to obtain an appropriate resources application to perform a mission. Our scenario of study applies the same context, considering C2 a process to obtain desired results. To emphasize this aspect of results level, we extended the current studies to insert QA concepts into C2 models.
+
+Besides that, \textit{Mason et al.}~\cite{Mason2001} made an analysis of C2 processes to propose a software architecture that is capable to represent a headquarter applying C2 in an operation. However, this study did not address QA measurement in this process differently of what is being proposed by our study.
+
+\textit{Stanton et al.}~\cite{Stanton2007} presented four common models to investigate and to detail activities applied to the C2 process. However these models did not identify and explore explicitly the agility aspects. Based on this, \textit{Alberts}~\cite{Alberts10} introduced, in a formal way, the concept of agility and the main aspects related to circumstances changes and how to deal with these new constraints and conditions.
+
+The same previous work \cite{Alberts2006} defined the three dimensions of C2 Approach Space. The Distribution of Information (DoI) specifies who will receive the information. The Patterns of Interaction (PoI) defines how the elements will connect with each other and with the Allocation of Decision Rights (ADR) dimension we know how it is distributed, between the members, the capacity of take a decision. 
+
+All different possibilities of C2 approaches, to deal with different contexts, form the C2 Approach Space. \textit{Alberts et al.}~\cite{nato01} worked with the five regions identified within the that space as the maturity levels of C2 Agility. It was presented an analysis of results obtained with identification of the current maturity level of the organization and how it deals with circumstances changes in case of C2 Approach change be required.
+
+In more recent studies, \gls{NATO} in its technical report SAS-085~\cite{FRANCE2014} performed an analysis of C2 agility as the capability of to deal with many different circumstances, collecting evidences to support some hypothesis identified. This agility adjustment was done considering the adoption of one of those five C2 Approach previously presented. To obtain evidence, they used two kind of experiments: based on simulations and based on historical results of real operations. Some attributes could not be measured in simulated environment and did not prove the theory related to it leaving opportunities for future works. 
+
+Even being complex and plenty of information, representing the state of the art about C2 Agility, that report did not consider any cost notion. Based on \textit{Alberts et al.}~\cite{Alberts2006} and \textit{Tran et al.}~\cite{C2-20} cited the importance of results measurements as quality evaluation. In real scenarios, the measurements are fundamental to define if the mission is even feasible. 
+
+To address the positions within C2 Approach Space, the domain experts in USA presented the definition Network Centric Warfare (NCW) described by \textit{Alberts et al.}~\cite{Alberts2000}. It is the similar concept from the original Network Enabled Capability (NEC) presented by England and described by \textit{Alston et al.}~\cite{AnthonyAlston2003}. Basically, both definitions bring the same concept of awareness sharing and the team action capacity is directly related to the network structure and this structure is exploited to empower the forces dispersed during the mission execution. In our work, we apply the original concept of NEC making a simplification in the network design.
+
+In terms of modelling the C2 scenario, there is no combination of the two topics developed by the present study, C2 and SPL, in current works. However, as explained by \textit{Alberts et al.}~\cite{Power01}~\cite{Alberts2006}, with some real cases analysis, the C2 concept application is quite linked to dynamic scenarios with uncertainty level represented by the possibility of any circumstance change during mission execution. In order to deal with this uncertainty and dynamic context, our work applies the extended SPL definition so-called DSPL.
+
+\textit{Stanton et al.}~\cite{Stanton2007} presented, among some models, the Process Model. It shows a structure that summarize the monitoring, decision, adapting and acting executed by C2 process. In our study, we explored these steps, extending the concepts to apply a DSPL approach as new C2 modelling in order to improve the process agility. 
+
+To operate in scenarios with high level of dynamism, the C2 process needs to be able to give fast response in terms of adaptation, resources application and results level within the time limit to have responsiveness. At this point, \textit{Alberts et al.}~\cite{Alberts2011} explored the agility concept and all requirements to obtain it. In our work, the agility is a desired attribute of DSPL adaptation resource, and it will guide the C2 modelling. 
+
+Recently, \textit{Tran et al.}~\cite{c2-02} presented an study of agility in C2 networks, where it is proved that adaptive networks can provide C2 Agility. However, it works only on the network structure, not exploring the members' adaptation in case of circumstances change. Our work presents a model that address C2 Agility in two levels, one in terms of network structure and the second where there is an adaptation through members reconfiguration or task reallocation.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{DSPL}
+
+In software context, Self-Adaptive Systems (SAS) has a similar principles of C2. They are currently widely used to deal with scenarios where there are changes during systems execution. The ability to adapt itself to attend new requirements from the environment or from the user, becomes it useful in many circumstances where the software needs to adapt based on some requirements change or any stimulus obtained by the sensors~\cite{SAS04}. In short, it optimizes resources through adaptation due to context changes, aiming tasks execution. \textit{Rosenmüller et al.}~\cite{Rosenmuller2011} describes a Dynamic Software Product Line (DSPL) as an approach to model a SAS. 
+
+We are introducing a process that handles a new paradigm called Multi Dynamic Software Product Line (MDSPL). It is capable to receive the metric injection that will permit to check if quality required levels are being satisfied. These measurements follow the paradigm of goal oriented DSPL as what was presented by \textit{Pessoa et al.}~\cite{Pessoa2017}.
+
+However, current studies about DSPL~\cite{DSPL01-01}~\cite{DSPL01-02}~\cite{Rosenmuller2011}~\cite{DSPL01-04}~\cite{DSPL01-05}~\cite{Pessoa2017}~\cite{BencomoHA12}~\cite{ShariflooMQBP16}~\cite{7194657} do not explore DSPL grouping and coordination. The communication between DSPLs that impacts on the collaboration and final global configuration are not explored. DSPLs are seen as independent elements and normally treated individually as what was presented by \textit{Rosenm\"uller et al.}~\cite{Rosenmuller2011}~\cite{Rosenmuller2010}. Our study is looking for extend the reasoning used by MPL theory, where a group of SPL shares a mutual contribution among its elements, to dynamic SPLs. As show by \textit{Rosenm\"uller et al.}~\cite{Rosenmuller2010} and \textit{Lienhardt et al.}~\cite{Lienhardt2018}, some SPLs reorganize to share awareness about their necessary configuration, and the configuration of each one can cause influences in the others. When this coordination concept of MPL is extended to DSPL we have the MDSPL principles in practice. 
+
+As presented by \textit{Cheng et al.}~\cite{Cheng2009}, where the DSPL was described by a combination of structure, behavior and goals, we extended this principle to the MDSPL with the QA as goals.
+
+The members that execute tasks are represented by the DSPLs in the MDSPL structure. These elements are modelled as Feature Models but we need to include attributes that will change the combination way of the features in order to generate products with valid configurations. To deal with this requirement, we based ourselves in the Attributed FM paradigm presented by \textit{Bécan et al.}~\cite{DSPL100-1} to insert attributes into FM.
+
+To deal with dynamic system adaptation, \textit{Arcaini et al.}~\cite{MAPE01} presented a feedback loop structure based on the classic MAPE-K. However, this idea is not enough to treat all changes that can occurs in C2 context. Inspired in the idea of multi layers feedback loops presented by \textit{Litoiu et al.}~\cite{MAPE02}, our proposal uses a MAPE-K loop in layers and each one is responsible to monitor and act according to part of the scenario.
+
+The behavior of the systems controlled by these feedback loops is based on the quality attributes monitoring. It is necessary to do a constant checking on the levels measured from the environment and from the own component to identify the necessity to change. \textit{Hezavehi et al.}~\cite{SAS_001} performed a systematic literature review about methods to handle multi quality attributes, and it is useful to our work due to our necessity for multi quality attributes controlling. In C2 we have the requirement of analyze the tread-off among the variables to get a decision.
+
+There are some proposals to represent feedback loops in SAS and \textit{Vogel et al.}~\cite{SAS05} proposed a language using megamodels to represent feedback loops in multiple levels and with the encapsulate capability. This idea motivated our work, however we use the idea of multiple levels feedback loops with Program Graphs representation to model each component of the C2 System.
+
+Furthermore, there are some works reviewed by \textit{Shevtsov et al.}~\cite{SAS100-02} that combine control theory with self adaptive system. This strategy called control-theoretical adaptation permits to guarantee a better adaptation in dynamic context using feedback loops and adaptation mechanisms to respond a circumstance change. Useful concepts applied in our work were extracted from this theory.
+
+As C2 context are quite dynamic, the study made by \textit{Nahabedian et al.}~\cite{DSPL100-03} brings us interesting elements and motivation to work with adaptive controllers giving to the system the ability to adapt its controller's mechanisms according to the circumstance changes. It can be useful to our proposal due to requirement or goal changes, but it needs to be improved to support multiple layers of monitoring.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Channel System and Simulation}
+
+\textit{Baier et al.} in her book about Model Checking~\cite{baier} presents the concept of Program Graphs and Channel System paradigm to model a process executed by a program. We extended this using to permit a flexible structure composed by many program graphs (PG) in chain. As presented in \cite{baier}, these PGs can be connected trough synchronous and asynchronous communication links so-called channels. In our proposal, we use these channels as connectors among different process in different levels of C2 structure. This structure formed by some PGs running in parallel and exchanging data is called Channel System. In our work we extend this definition with the using of parameters to permit the generation of the PGs in runtime.
+
+The PGs can be unfolded to identify all possible states which the component modelled can adopt. This unfold process generates a TS and it is represented using Labeled Kripke Structures presented by \textit{Sousa et al.}~\cite{ltl02}. To represent temporal properties over states and actions it is used the State/Event Linear Temporal Logic (SE-LTL) that extends a classic LTL as shown by \textit{Chaki et al.}~\cite{ltl01}.
+
+To define the simulation environment and tool more suitable to perform tests and collect evidence related to our theory, we based on the study performed by \textit{Sameera et al.}~\cite{ABAR201713}, where we could identify useful tools to perform the primary tests, e.g., RePast Symphony and NetLogo. In our work, we are using NetLogo to perform the initial tests and simulations due to simplicity of the beginning scenarios.
+
+Initial simulations where performed to collect evidence of impacts on the results caused by dynamic scenarios and C2 Approach selected. These primary evaluations were based on the study about allocation tasks to UAVs, made by \textit{Schwarzrock et al.}~\cite{Schwarzrock2017}. However, we extended the agent-based simulation to include dynamic elements to measure results obtained in this new circumstance. The results collected showed some evidence of effects in QA measurements caused by C2 Approach change.
+
+Similar to the previous simulation was performed by \textit{Gerasimou et al.}~\cite{UUV} where it was implemented an architecture in which a controller defined by a MAPE-K loop is responsible to handle and to process the information and perform the system adaptation according to new circumstances. Our proposal is an extension of this solution due to the multi feedback loops in layers defining system roles.
+
+To model the members of our C2 scenario, we based on the work of \textit{Santos et al.}~\cite{SANTOS2018162} that uses a Model-Driven Development approach to support the modelling of an agent-based simulation system. The code generation of these initial simulations were done using NetLogo platform. This choice was made based on the language simplicity and tool's resources and features to operate with the implementation. It motivated the use of NetLogo in our research, however it is not possible to simulate complex situations with this tool.
+
+Another work that uses NetLogo to validate the proposal was presented by \textit{Han et al.}~\cite{c2-02}. The adaptive networks under C2 context are simulated to analyze the behavior in different circumstances evaluated. The complex scenario and tool limitation do not permit a complete measurement of many attributes that exist in C2 process.
+
+
+
+The simulation will be used in our work to validate the solution proposed and to collect evidence of any important detail from the C2 domain operation. This validation is an element in the flow presented by \textit{Wholin et al.}~\cite{ClaesWohlinPerRuneson2012}. In their work, the validation in academia must to follow some formalization because there is a risk of hide some important aspects due to a technology limitation.
