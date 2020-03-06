@@ -4,7 +4,7 @@
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,726); %set diagram left start at 0, and has height of 726
+%uncomment if require: \path (0,775); %set diagram left start at 0, and has height of 775
 
 %Curve Lines [id:da9480858267519683] 
 \draw    (230.5,181) .. controls (264.16,138.43) and (373.78,135.06) .. (406.05,178.66) ;
@@ -49,9 +49,9 @@
 \draw    (413.5,391) .. controls (394.69,323.68) and (299.43,241.66) .. (246.1,216.74) ;
 \draw [shift={(244.5,216)}, rotate = 384.36] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Rounded Rect [id:dp2887172897272543] 
-\draw   (6,511.6) .. controls (6,484.76) and (27.76,463) .. (54.6,463) -- (425.4,463) .. controls (452.24,463) and (474,484.76) .. (474,511.6) -- (474,657.4) .. controls (474,684.24) and (452.24,706) .. (425.4,706) -- (54.6,706) .. controls (27.76,706) and (6,684.24) .. (6,657.4) -- cycle ;
+\draw   (111,578.6) .. controls (111,553.97) and (130.97,534) .. (155.6,534) -- (575.4,534) .. controls (600.03,534) and (620,553.97) .. (620,578.6) -- (620,712.4) .. controls (620,737.03) and (600.03,757) .. (575.4,757) -- (155.6,757) .. controls (130.97,757) and (111,737.03) .. (111,712.4) -- cycle ;
 %Rounded Rect [id:dp07131134126212679] 
-\draw   (479,475.4) .. controls (479,469.1) and (484.1,464) .. (490.4,464) -- (713.6,464) .. controls (719.9,464) and (725,469.1) .. (725,475.4) -- (725,509.6) .. controls (725,515.9) and (719.9,521) .. (713.6,521) -- (490.4,521) .. controls (484.1,521) and (479,515.9) .. (479,509.6) -- cycle ;
+\draw   (106,479.4) .. controls (106,473.1) and (111.1,468) .. (117.4,468) -- (609.6,468) .. controls (615.9,468) and (621,473.1) .. (621,479.4) -- (621,513.6) .. controls (621,519.9) and (615.9,525) .. (609.6,525) -- (117.4,525) .. controls (111.1,525) and (106,519.9) .. (106,513.6) -- cycle ;
 %Curve Lines [id:da580151899278355] 
 \draw    (113.5,201) .. controls (51.13,189.12) and (89.71,141.96) .. (126.39,184.68) ;
 \draw [shift={(127.5,186)}, rotate = 230.57] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
@@ -90,7 +90,7 @@
 % Text Node
 \draw (391,266) node    {$alloc=[] :done$};
 % Text Node
-\draw (239,592) node    {$ \begin{array}{l}
+\draw (367,653) node    {$ \begin{array}{l}
 Var=\{alloc,\ f\_alloc,\ teamStatus,\ T',\ E',\ t,\ e'_{j} ,\ time,\ interval\}\\
 alloc=[ \langle \ i,T'_{i} \ \rangle ] ,\ where\ \{i\ \in \mathbb{N} \ |\ 1\ \leq i\ \leq |E|\ \} \ \ and\ T'\ \supseteq \bigcup\limits ^{|E|}_{i=1} T'_{i}\\
 Effect( allocate,\ \eta ) =\ \eta [ alloc:=\ f\_alloc( T',\ E')]\\
@@ -98,7 +98,7 @@ Effect( bind,\ \eta ) =\ \eta [ \ \langle k,T'_{k} \rangle :=head( alloc) ;\ all
 Effect( update,\ \eta ) =\eta [ \ T':=T'\cup \ [ t] \ ;\ E'=E'( e_{j} /e'_{\ }_{j})]\\
 Effect( done,\eta ) =\eta [ \ T':=[] \ ]\\
 Effect( addTask,\eta ) =\eta [ \ T':=T'+[ t'_{1} ,t'_{2} ,\ ...,\ t'_{k}] \ ]\\
-Effect( ping,\eta ) =\eta [ \ E':=teamStatus( E') \ ]\\
+Effect( ping,\eta ) =\eta [ \ \langle T',E'\rangle :=teamStatus( E') \ ]\\
 \end{array}$};
 % Text Node
 \draw (219,8) node    {$g_{0}$};
@@ -115,9 +115,9 @@ Effect( ping,\eta ) =\eta [ \ E':=teamStatus( E') \ ]\\
 % Text Node
 \draw (582,320) node   [align=left] {(n)};
 % Text Node
-\draw (604,500) node    {$ \begin{array}{l}
-g_{0} :=( T'=[]) \ \land ( f\_alloc\ =\ f_{x})\\
-cg_{1} :=( mod( time,interval) =0)\\
+\draw (361.76,494) node    {$ \begin{array}{l}
+g_{0} :=( T'=[]) \ \land ( f\_alloc\ =\ f_{x}([ t_{1} ,\ ...,t_{n}] \ p_{1} ,\ [ e_{1} ,...,e_{n}] \ p_{2}))\\
+cg_{1} :=( mod( time,interval) =0)
 \end{array}$};
 % Text Node
 \draw (75,155) node    {$cg_{1} :ping$};

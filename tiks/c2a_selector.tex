@@ -23,7 +23,7 @@
 \draw    (562.5,60) -- (523.21,83.96) ;
 \draw [shift={(521.5,85)}, rotate = 328.63] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Rounded Rect [id:dp20897962983691354] 
-\draw   (16,227.2) .. controls (16,214.39) and (26.39,204) .. (39.2,204) -- (457.8,204) .. controls (470.61,204) and (481,214.39) .. (481,227.2) -- (481,296.8) .. controls (481,309.61) and (470.61,320) .. (457.8,320) -- (39.2,320) .. controls (26.39,320) and (16,309.61) .. (16,296.8) -- cycle ;
+\draw   (3.5,227.2) .. controls (3.5,214.39) and (13.89,204) .. (26.7,204) -- (611.3,204) .. controls (624.11,204) and (634.5,214.39) .. (634.5,227.2) -- (634.5,296.8) .. controls (634.5,309.61) and (624.11,320) .. (611.3,320) -- (26.7,320) .. controls (13.89,320) and (3.5,309.61) .. (3.5,296.8) -- cycle ;
 %Rounded Rect [id:dp6489541210438411] 
 \draw   (15,348.6) .. controls (15,339.98) and (21.98,333) .. (30.6,333) -- (539.4,333) .. controls (548.02,333) and (555,339.98) .. (555,348.6) -- (555,395.4) .. controls (555,404.02) and (548.02,411) .. (539.4,411) -- (30.6,411) .. controls (21.98,411) and (15,404.02) .. (15,395.4) -- cycle ;
 %Curve Lines [id:da07722007259294938] 
@@ -46,9 +46,9 @@
 % Text Node
 \draw (531,13) node    {$g_{2} :maneuver$};
 % Text Node
-\draw (253,259) node    {$ \begin{array}{l}
-g_{0} =( w=\omega _{0}) \land ( T=[ t_{1} ,t_{2} ,...,t_{f}]) \land ( find\_maneuver=f_{1}) \land \\
-\ \ \ \ \ \ \ \ \ ( f\_remove=f_{2}) \land ( E=\{e_{1} ,e_{2} ,...,e_{n}\}) \land ( i=1)\\
+\draw (317,260) node    {$ \begin{array}{l}
+g_{0} =( w=\omega _{0}) \land ( T=[ t_{1} ,t_{2} ,...,t_{f}]) \land ( find\_maneuver=f_{1}( C2_{ap} ,[ e_{1} ,...,e_{n}] ,[ t_{1} ,...,t_{n}])\\
+\ \ \ \ \ \ \ \ \land ( f\_remove=f_{2}([ t_{1} ,...,t_{n}])) \land ( E=\{e_{1} ,e_{2} ,...,e_{n}\}) \land ( i=1)\\
 g_{1} \ =\ \nexists \omega \in \Omega \mid \omega \models T\\
 g_{2} \ =\ \exists \omega '\in \Omega \mid ( \omega '\neq \omega ) \land ( \omega \nvDash T) \land ( \omega '\models T)\\
 cg_{1} :=( mod( time,interval) =0)

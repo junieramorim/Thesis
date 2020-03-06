@@ -1,0 +1,12 @@
+The C2 System proposed by this work is composed by three roles listed in Table \ref{table:table04}, that can be performed by one or more elements and in concurrent way, i.e., a member or individual can perform more than one role simultaneously.
+
+\input{tables/table04}
+
+The superimposition is an well known technique to combine features and merge their code generating a customized software\cite{apel100}. This technique can be applied during the agents configuration and also in the role's implementation, conferring mechanism to support variability. As some members can implement more than one role and the C2 Approach Selector and Task allocator are roles that can be spread in more than one member, superimposition appears as a way to combine these concerns in one member.
+
+Initially, we need at least one element with the task allocator (TA) role. The C2 Approach selector role (C2A), by premise, is executed by a single element that can even be an external coordinator of the team, i.e., a central command. However, the TA role executed by many elements, does not perform the function completely. The task allocation will be the final result of the all TA actions. With that, feature TA will be distributed among the elements and generating scattered code.
+
+The executor role (EX) works completely within the element executing all its function. Based on this, we do not have a crosscutting concern and scattered code. In terms of implementation, it means a fully insertion of the EX features in each member that performs EX role. \cite{apel100} shows the superimposition as a technique used to merge roles, attempting to restrictions related to the order of roles appearance or execution. It can be applied in the roles allocation process of C2 System.
+
+The members are a class grouping that implements features belonging to each role. In case of multiple roles execution, these features need to be composed to merge roles. The superimposition is a successful process to support variability making the features composition to treat the concern crosscutting resulted from the spread roles between different elements \cite{apel2011, marin2005}.
+

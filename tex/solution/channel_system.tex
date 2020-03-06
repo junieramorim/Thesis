@@ -1,34 +1,32 @@
-The Channel System(CS) that represents the C2 System is composed by program graphs (PG) that represents the three roles identified as part of the system, i.e., C2 Approach Selector (C2A), Task Allocator (TA) and Executor (EX). The member or individuals can execute one or more roles simultaneously.
+The Channel System(CS) that represents the C2 System ($CS_{C2}$) is composed by program graphs (PG) that represents the three roles identified as part of the system, i.e., C2 Approach Selector (C2A), Task Allocator (TA) and Executor (EX). The member or individuals can execute one or more roles simultaneously.
 
 Our CS is parameterized, i.e., the program graphs instantiating is done according to the parameters passed. The parameters are the following:
 \begin{itemize}
-    \item T : number of tasks that defines the initial mission
-    \item E : set of members $e_i$ that compose the team
-    \item $\omega$ : the initial C2 approach operated by the system
+    \item T : set of tasks that defines the initial mission
+    \item E : set of members $e_i$ that composes the team that is defined by the tuples $\langle FM, c_0\rangle$, where $FM$ is the feature model and $c_0$ is the initial valid configuration of the FM. 
+    \item $\omega_0$ : the initial C2 approach ($C2_{ap}$) operated by the system
 \end{itemize}
 
-The total number of members, i.e., $n=|E|$, defines the quantity of Executor instances. Thus, the formula \ref{CS01} represents the CS and \ref{CS02} shows an instance with $n$ executors.
+Based on this, we can define the CS as a parameterized function show by Equation \ref{function01}. Its graphical representation is shown by Figure \ref{cs01}.
+
+\begin{equation}
+\label{function01}
+\begin{aligned}
+CS_{C2}:&[e_1, e_2, ..., e_n]\ E,\ [t_1, t_2, ..., t_n]\ T,\ C2_{ap}\ \omega_0 \longrightarrow \\
+&[C2A(E,T,\omega_0)\ |\ TA(\omega_0)\ |\ EX(e_1, \omega_0)\ |\ EX(e_2, \omega_0)\ |...|\ EX(e_n, \omega_0)]
+\end{aligned}
+\end{equation}
+
+where each member $e_k$ of the list E of members, i.e., the team, is represented by the pair $e_k=\langle FM_k,c_{0_k} \rangle$ composed by the feature model and the initial configuration of the member, the $t_k$ is the k\textit{th} task of the set T, and $\omega_0$ is the initial C2 Approach ($C2_{ap}$) operated by the team E.
+
+The total number of members, i.e., $n=|E|$, defines the quantity of Executor instances. Each PG that forms the CS receives attributes as argument in order to create the correct diagram and they are used to satisfy the initial guard condition $g_0$ of them.
 
 \begin{equation}
 \label{CS01}
-    CS_{C2} = [C2A\ |\ TA\ |\ EX^n](E, T, \omega)
+    CS_{C2} = [C2A\ |\ TA\ |\ EX_1\ |\ EX_2\ |\ ...\ |\ EX_n]
 \end{equation}
 
-Creating an instance of this CS with $n$ executors generates the following:
-
-\begin{equation}
-\label{CS02}
-    CS_{C2} = [C2A\ |\ TA\ |\ EX_1\ |\ ...\ |\ EX_n](E, T, \omega_0)
-\end{equation}
-
-The TS resulted from \ref{CS02} is a set of tuples in the form:
-
-\begin{equation}
-\label{CS02}
-    TS(CS_{C2})=\langle l_{C2A}, l_{TA}, l_{EX_k}, \eta, \xi \rangle |_{k=1}^n
-\end{equation}
-
-where $l_p$ is the locate $l$ for the PG $p$, $\eta \in Eval(val)$ is the value of all variables in TS and $\xi$ is the state of all channels in the system, i.e., $lenght(\xi(c)) \leq cap(c), c \in \{c_1, c_2, m_1, ..., m_n, fb\}$.
+We can observe that C2A and TA roles appear only once even when instantiated. It occurs due to the crosscutting effect of these roles. Similar to features scattered by different components, these roles play as crosscutting concerns in the C2 System~\cite{Apel2013} and they can be executed by many individuals or members. On the other hand, the EX role is totally within a member and it is necessary to represent each instance as a member or process being executed, i.e., no feature scattering. Thus, C2A and TA roles can permeate the implementation of many members and it explains the representation in CS using only one role. 
 
 \begin{figure}[h]
 \centering
@@ -37,18 +35,43 @@ where $l_p$ is the locate $l$ for the PG $p$, $\eta \in Eval(val)$ is the value 
 \caption{Channel System with its roles and channels represented}
 \end{figure}
 
+The formula \ref{CS01} represents the CS with $n$ instances of executors in a general view, that is represented by the following diagram.
 
-We can observe that C2A and TA roles appear only once even when instantiated. It occurs due to the crosscutting effect of these roles. Similar to features scattered by different components, these roles play as crosscutting concerns in the C2 System~\cite{Apel2013} and they can be executed by many individuals or members. On the other hand, the EX role is totally within a member and it is necessary to represent each instance as a member or process executing and that it does not present scattered feature or concern.
+\begin{figure}[h]
+\centering
+\label{cs02}
+\scalebox{1}{\input{tiks/CS_INSTANCE}}
+\caption{Channel System with PG instances}
+\end{figure}
 
 Based on this, we can find two different views. The first one is according to the roles, where they have the implementation spread among different individuals. It characterizes a crosscutting concern. However, we have another view under the member perspective. That view is defined by a tangled role in case of partial or total implementation and/or execution in different individuals or entities. 
+The TS resulted from \ref{CS01} unfolded is a set of tuples in the form:
 
-All possible situations treated at this first stage is shown in Table \ref{table:scenarios}. The dynamic context includes possible changes in the self, mission or environment.
+\begin{equation}
+\label{CS02}
+    TS(CS_{C2})=\langle l_{C2A}, l_{TA}, l_{EX_k}, \eta, \xi \rangle |_{k=1}^n
+\end{equation}
+
+where $l_p$ is the locate $l$ for the PG $p$, $\eta \in Eval(val)$ is the value of all variables in TS and $\xi$ is the state of all channels in the system, i.e., $lenght(\xi(c)) \leq cap(c), c \in \{c_1, c_2, m_1, ..., m_n, fb\}$.
+
+
+When there are no context changes, the execution occurs normally and the steps are defined as:
+
+\begin{enumerate}
+    \item Select C2A
+    \item Task allocation
+    \item Member configuration
+    \item Task execution
+    \item Success report
+\end{enumerate}
+
+All other possible situations treated at this first stage is shown in Table \ref{table:scenarios}. The dynamic context includes possible changes in the self, mission or environment.
 
 \input{tables/issues01}
 
 The PG of each role are the following:
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \label{PG001}
 \scalebox{.8}{\input{tiks/c2a_selector}}
@@ -56,7 +79,7 @@ The PG of each role are the following:
 \end{figure}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \label{PG002}
 \scalebox{.8}{\input{tiks/ta}}
@@ -64,7 +87,7 @@ The PG of each role are the following:
 \end{figure}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \label{PG003}
 \scalebox{.8}{\input{tiks/executor}}
@@ -84,8 +107,3 @@ According to possible situations considered and listed in Table \ref{table:scena
 
 
 
-1. Select C2A
-2. Task allocation
-3. Member configuration
-4. Task execution
-5. Success report
