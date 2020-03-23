@@ -252,6 +252,34 @@ A DSPL execution in a dynamic scenario can be seen as a sequence of valid config
 
 Basically, DSPL is an approach to SAS that can be incremented with a feedback loop to deal with constant environment and requirements change that were not previewed at design time \cite{SAS100-04}.
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Transition System}
+
+
+The TS resulted from \ref{CS01} unfolded is a set of tuples in the form:
+
+\begin{equation}
+\label{CS02}
+    TS(CS_{C2})=\langle l_{C2A}, l_{TA}, l_{EX_k}, \eta, \xi \rangle |_{k=1}^n
+\end{equation}
+
+where $l_p$ is the locate $l$ for the PG $p$, $\eta \in Eval(val)$ is the value of all variables in TS and $\xi$ is the state of all channels in the system, i.e., $lenght(\xi(c)) \leq cap(c), c \in \{c_1, c_2, m_1, ..., m_n, fb\}$.
+
+According to possible situations considered and listed in Table \ref{table:scenarios}, we can unfold the PGs above and create the related TS.
+
+\begin{figure}[h!]
+\centering
+\label{TS01}
+\scalebox{.8}{\input{tiks/TS01}}
+\caption{TS for the Normal execution}
+\end{figure}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% SECTION %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

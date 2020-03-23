@@ -1,6 +1,5 @@
 
 
-
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -29,7 +28,7 @@
 \draw    (123.5,226) .. controls (100.84,271.31) and (108.27,364.16) .. (126.65,401.34) ;
 \draw [shift={(127.5,403)}, rotate = 242.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Curve Lines [id:da9572857730465772] 
-\draw    (234.22,228.76) .. controls (260.49,268.16) and (260.11,371.42) .. (234.5,399) ;
+\draw    (234.22,228.76) .. controls (260.54,268.31) and (261.61,376.42) .. (236,404) ;
 \draw [shift={(233,227)}, rotate = 54.11] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Curve Lines [id:da9385545433271328] 
 \draw    (517.5,315) .. controls (479.88,326.88) and (463.82,339.74) .. (457.68,385.6) ;
@@ -49,9 +48,9 @@
 \draw    (413.5,391) .. controls (394.69,323.68) and (299.43,241.66) .. (246.1,216.74) ;
 \draw [shift={(244.5,216)}, rotate = 384.36] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Rounded Rect [id:dp2887172897272543] 
-\draw   (111,578.6) .. controls (111,553.97) and (130.97,534) .. (155.6,534) -- (575.4,534) .. controls (600.03,534) and (620,553.97) .. (620,578.6) -- (620,712.4) .. controls (620,737.03) and (600.03,757) .. (575.4,757) -- (155.6,757) .. controls (130.97,757) and (111,737.03) .. (111,712.4) -- cycle ;
+\draw   (111,586.6) .. controls (111,561.97) and (130.97,542) .. (155.6,542) -- (575.4,542) .. controls (600.03,542) and (620,561.97) .. (620,586.6) -- (620,720.4) .. controls (620,745.03) and (600.03,765) .. (575.4,765) -- (155.6,765) .. controls (130.97,765) and (111,745.03) .. (111,720.4) -- cycle ;
 %Rounded Rect [id:dp07131134126212679] 
-\draw   (106,479.4) .. controls (106,473.1) and (111.1,468) .. (117.4,468) -- (609.6,468) .. controls (615.9,468) and (621,473.1) .. (621,479.4) -- (621,513.6) .. controls (621,519.9) and (615.9,525) .. (609.6,525) -- (117.4,525) .. controls (111.1,525) and (106,519.9) .. (106,513.6) -- cycle ;
+\draw   (106,487.4) .. controls (106,481.1) and (111.1,476) .. (117.4,476) -- (609.6,476) .. controls (615.9,476) and (621,481.1) .. (621,487.4) -- (621,521.6) .. controls (621,527.9) and (615.9,533) .. (609.6,533) -- (117.4,533) .. controls (111.1,533) and (106,527.9) .. (106,521.6) -- cycle ;
 %Curve Lines [id:da580151899278355] 
 \draw    (113.5,201) .. controls (51.13,189.12) and (89.71,141.96) .. (126.39,184.68) ;
 \draw [shift={(127.5,186)}, rotate = 230.57] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
@@ -76,7 +75,7 @@
 % Text Node
 \draw (221,303) node    {$update$};
 % Text Node
-\draw (487,84) node    {$alloc=[] :c_{2} !\langle T',E'\rangle $};
+\draw (487,84) node    {$alloc=[] :c_{3} !\langle T',E'\rangle $};
 % Text Node
 \draw (188,79) node    {$c_{2} ?\langle T',E'\rangle $};
 % Text Node
@@ -90,7 +89,7 @@
 % Text Node
 \draw (391,266) node    {$alloc=[] :done$};
 % Text Node
-\draw (367,653) node    {$ \begin{array}{l}
+\draw (367,661) node    {$ \begin{array}{l}
 Var=\{alloc,\ f\_alloc,\ teamStatus,\ T',\ E',\ t,\ e'_{j} ,\ time,\ interval\}\\
 alloc=[ \langle \ i,T'_{i} \ \rangle ] ,\ where\ \{i\ \in \mathbb{N} \ |\ 1\ \leq i\ \leq |E|\ \} \ \ and\ T'\ \supseteq \bigcup\limits ^{|E|}_{i=1} T'_{i}\\
 Effect( allocate,\ \eta ) =\ \eta [ alloc:=\ f\_alloc( T',\ E')]\\
@@ -115,7 +114,7 @@ Effect( ping,\eta ) =\eta [ \ \langle T',E'\rangle :=teamStatus( E') \ ]\\
 % Text Node
 \draw (582,320) node   [align=left] {(n)};
 % Text Node
-\draw (361.76,494) node    {$ \begin{array}{l}
+\draw (361.76,502) node    {$ \begin{array}{l}
 g_{0} :=( T'=[]) \ \land ( f\_alloc\ =\ f_{x}([ t_{1} ,\ ...,t_{n}] \ p_{1} ,\ [ e_{1} ,...,e_{n}] \ p_{2}))\\
 cg_{1} :=( mod( time,interval) =0)
 \end{array}$};
@@ -123,6 +122,8 @@ cg_{1} :=( mod( time,interval) =0)
 \draw (75,155) node    {$cg_{1} :ping$};
 % Text Node
 \draw (163,134) node    {$addTask$};
+% Text Node
+\draw (174,464) node   [align=left] {\textbf{\underline{TASK ALLOCATOR}}};
 
 
 \end{tikzpicture}
