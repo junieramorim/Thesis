@@ -12,13 +12,34 @@
 \usepackage{pdfpages}% incluir PDFs, usado no apêndice
 \usepackage{amsmath}%
 \usepackage{amssymb}
-\usepackage{MnSymbol}%
+%\usepackage{MnSymbol}% \lbrace \rbrace
 \usepackage{wasysym}%
 \usepackage{color, colortbl}
 \usepackage{glossaries}  
 \usepackage{tikz}
 \usepackage{stmaryrd}
 \usepackage{eucal}
+
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{textcomp}
+
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+
+\usepackage[toc,page]{appendix}
 
 %For the tables
 \usepackage[normalem]{ulem}
@@ -57,7 +78,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-    \capituloE{introduction}{Introduction}{
+
+\capituloE{introduction}{Introduction}{
 This chapter introduces this work by first describing the context (Section~\ref{sec:context}). Next, follow the research problems and corresponding motivations (Section~\ref{sec:problemMotivation}). Then a proposed solution is presented (Section~\ref{sec:solutionIntro}) as well as its planned evaluation (Section~\ref{sec:evalIntro}). Finally, we discuss the remainder structure of this work (Section~\ref{sec:structureWork}).
 }
 
@@ -79,4 +101,10 @@ In this chapter, we first detail the addressed research problems, highlighting i
     %\anexo{Anexo1}{Documentação Original \unbcic\ (parcial)}%
     \input{tex/glossary}
     \printglossary[title={Glossary}]
+    
+    \begin{appendices}
+        \chapter{Survey Questions}
+        \label{app:survey}
+        \input{tex/appendix/appendixA}
+    \end{appendices}
 \end{document}%

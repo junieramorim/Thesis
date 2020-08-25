@@ -1,0 +1,46 @@
+
+%Revisitar o Projeto do Estudo Empírico (Definir cenários).
+%Projeto da simulação (Prof Travassos - Simular simulação)
+%Design experimental.
+%Protocolo de simulação.
+%Liga GQM e Implementação (Justificar os cenarios)
+
+%Explicar a simulação utilizando um sistema baseado em agentes (RePast) implementando o emprego de VANTs com sensores a bordo e empregados em uma missão de reconhecimento. 
+
+% A alocação das tarefas que compoem a missão é realiada pelos próprios membros. Esses membros se coordenam através da abordagem de C2.
+
+This study is classified as an empirical software engineering and we perform \textit{in silico} experiments~\cite{simulation01}, where the subjects and the world elements are described as computer models. Such method provides a way to analyse different situations and it allows to work with different scenarios that would be unfeasible to test given the cost and possibility of obtaining the resources.
+
+
+The simulation implemented uses an agent-based technology to represent the entities, the tasks that they must perform and the environment where everything runs. This model is a simpler view of a real mission with use of UAVs. Each UAV is modelled as a DSPL able to configure itself according to the context requirements.
+
+The simulated scenario composed by a set of members, i.e., a team, with a mission to be accomplished, i.e., a set of tasks, follows the steps below:
+
+\begin{enumerate}
+    \item The team selects a C2 Approach to be operated;
+    \item The team performs the allocation tasks according to the information obtained through the C2 structure;
+    \item The members receive the tasks allocated and performed the configuration required to execute them;
+    \item The members goes to the task to be executed (displacement to the target);
+    \item The member executes the task and reports the success accomplishment.
+\end{enumerate}
+
+However, these steps only works to a stable context. In our case, we have a dynamic scenario and with the purpose of evaluating the model, we submit the scenario to changes to simulate what could happen in the real world. Table \ref{table:context_changes} shows different circumstances explored by the simulation, with changes in the members, i.e., self, in the mission and in environment.
+
+\input{tables/table09}
+
+Based on the members behaviour described by the PGs, Table \ref{table:scenarios} shows the main steps followed by the entities in a dynamic context.
+
+\input{tables/issues01}
+
+\subsection{Executions}
+
+We performed a set of executions to analyse the entities behaviour and to collect results to be used as evidence of C2 agility existing. These executions were done with the following scenarios:
+
+\begin{enumerate}
+    \item A set of members operating a C2 Approach (Edge, Coordinated, De-Conflicted, Conflicted) and sensors' issues occur
+    \item A set of members operating a C2 Approach (Edge, Coordinated, De-Conflicted, Conflicted) and environment changes occur
+    \item A set of members operating a C2 Approach (Edge, Coordinated, De-Conflicted, Conflicted) and some members are randomly strike.
+    
+\end{enumerate}
+
+

@@ -9,6 +9,8 @@ The actions executing data exchange, i.e., with the '!' and '?' marquees, will b
 \caption{C2 Approach Selector PG}
 \end{figure}
 
+The guard conditions $g_1$ and $g_2$ in the C2 Approach Selector PG have an implicit existential analysis of a C2 approach. It is a previous simple processing to figure out a C2 Approach $\omega$ before evoking the function $find\_maneuver$. This strategy avoids an expensive computation performing the complete C2 Approach finding process twice.
+
 
 \begin{figure}[h!]
 \centering
@@ -24,3 +26,12 @@ The actions executing data exchange, i.e., with the '!' and '?' marquees, will b
 \scalebox{.8}{\input{tiks/executor}}
 \caption{Executor PG}
 \end{figure}
+
+It can be necessary to implement a monitoring mechanism able to figure out which members are online and any configuration modification. This procedure can be executed through a ping protocol following a time interval $\Delta t$. The action will be called if the condition showed by Equation \ref{eq001} is satisfied.
+
+\begin{center}
+\begin{equation}
+\label{eq001}
+if\ mod(current_time, \Delta t)=0
+\end{equation}
+\end{center}

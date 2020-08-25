@@ -1,0 +1,127 @@
+In order to represent the existing properties handled by the channel system, we had to choose a suitable logic able to represent all elements manipulated by the system during execution. The choosing process and the logic description is following described.
+
+\subsection{Logics Analysis}
+
+In general, the evaluated logics seek to represent the agility of the system with time constraints and they are the most used ones and they are able to support most of the requirements in many problems scenarios and areas. All these logics follow a Kripke Structure \cite{ltl02}. They must to identify the system's capacity to respond context changes. The member's configuration and tasks allocation are included as requirements that define system's behaviour. These configurations are the member's feature model representation with propositional logic~\cite{SPL10} indicating the presence or not, i.e., $true$ or $false$, of a feature. Furthermore, all response must be timeliness according to the mission requirements and constraints, reacting within the time slice defined.
+
+As shown in Section \ref{sec:problemMotivation} we can identify the agility requirement defined as a timeliness and suitable response of a C2 system in a dynamic context. These requirements must be written in a formal capable to work with temporal constraints and to encode agility of the system. Based on this, we analysed some logics to represent the system properties and requirements. Figure \ref{logics} shows the comparison result among some logics more used and well known by the literature. In summary, the green check marks indicate which of the above logics can be used to represent each of the main domain properties.
+
+\figura[!h]{logics_comparison}{Logics comparison according to domain requirements (* is reduced to another logic to be decidable)}{logics}{width=1.0\textwidth}%
+
+The \textit{Computation Tree Logic}(CTL)\cite{MC01} can be used to represent a transition system with no terminal states, using path quantifiers, i.e., $A$ for all paths and $E$ for at least one execution path in all running possibilities. These quantifiers are combined with temporal constraints over propositions, i.e., $X$ for next, $G$ for all, $F$ for eventually and $U$ for until. Equation \ref{eq_r_2} shows an example where the proposition $p$ is valid, at some point in the feature (eventually), for all execution paths. The limitation of using $CTL$ in our scenario is related to the lack of quantifiers over variables. It is essential to represent dynamic context with its changes.
+
+\begin{equation}
+\label{eq_r_2}
+    AFp
+\end{equation}
+
+Another logic analysed was the \textit{Linear Temporal Logic}(LTL)\cite{LTL001}. While CTL focus on branching nature of a program, analysing execution with path quantifiers, LTL concerns about temporal constraints under a single path execution, i.e., $\square$ for always, $\Diamond$ for eventually, and $\bigcirc$ for next. Equation \ref{eq_r_1} shows an example where the proposition $p$ always occurs. In turn, LTL provides a linear view-point of a program's set of states but similar to CTL, it does not work with variables quantifiers, that they are essential to represent properties of our dynamic scenario.
+
+\begin{equation}
+\label{eq_r_1}
+    \square p
+\end{equation}
+
+With the composition of CTL and LTL, we obtain the extended computation tree logic $CTL^*$ \cite{deharbe2004}, that works with quantifiers in propositional logic and future temporal constraints. It is capable analyze linear and branching views through a succession of possible states. Differently from CTL, the path quantifier does not require to be followed by a state quantifier, and we can find different composition of these operators to transmit the idea with the logic. However, according with our scenario, it is not possible to represent tasks reallocation and reconfiguration in response of the context changes. This occurs due to the missing of quantifiers over variables.
+
+The Variable LTL (VLTL) and Variable CTL (VCTL)~\cite{SONG2016104} are the extended form of LTL and CTL, respectively. They include variable quantifiers in addition to the propositional formulas and it is useful to represent dynamic properties as what we have in our scenario. These logics could be used to represent the domain properties, however they are undecidable. The same restriction occurs with Quantified CTL (QCTL) with Kripke semantics~\cite{QCTL01} becoming it undecidable.
+
+\textit{Clarkson et. al.}~\cite{clarkson2014} presented HyperCTL and HyperLTL logics with great resources and flexibility. These logics are powerful enough to represent our requirements but, to become decidable, they need to be reduced to a QPTL expression \cite{QPTL01}\cite{QPTL02}. From this reduction, the structure can be simplified and analysed as a QPTL formula. All these logics could be used to represent total or partial domain requirements of our modelling. However, considering their complexity and some limitations in terms of being decidable and their capability of representing more complex domain properties, our choice was the QPTL
+~\cite{qptl01}. 
+
+
+ 
+ 
+ %Logic elements description
+ \subsection{Elements Description}
+ 
+ The model proposed by this work represents real members in a C2 system as software components. These components are modelled as DSPLs ensuring the reconfiguration capability in runtime. The set $E=\{ e_1, ..., e_n \}$ represents the team with $n$ members performing a set $T=\{t_1, ..., t_m \}$ with $m$ tasks so called mission.
+ 
+To perform the mission, the team $E$ is always operating a C2 Approach $\omega$, represented by $E^\omega$. The set $\Omega$ with all possible C2 approaches manipulated is described in Equation \ref{omega} according to what was presented by NATO \cite{nato01}.
+
+\begin{equation}
+    \label{omega}
+    \Omega = \text{\{Edge, Collaborative, Coordinated, De-Conflicted, Conflicted\}}
+\end{equation}
+ 
+Each member in $e_i \in E$ is modelled as a Feature Model $FM$ that can be written as a pair formed by a set of features $F$ and a set of products $C$ obtained from the $FM$, as shown in Equation \ref{fm01}.
+
+\begin{equation}
+    \label{fm01}
+    FM=(F,C)\ where\ F=\{f_1,...,f_k\}\ and\ C=\llbracket FM \rrbracket \ with\ k \geq 1
+\end{equation}
+
+A valid configuration $c \in C$ is represented as a propositional formula indicating a set of features $[f_i,\ ...,\ f_j]$ enabled in $FM$.
+
+Figures \ref{PG002} and \ref{PG003} show the TA and EX program graphs with the actions to represent some context changes that can occur in runtime. These actions are grouped in the sets $CtxAct_{TA}$ and $CtxAct_{EX}$ as shown in Equations \ref{ctx1} and \ref{ctx2}. Equation \ref{} shows the final set result. 
+
+\begin{equation}
+    \label{ctx1}
+    CtxAct_{TA}=\{memberFailure,\ addTask \}
+\end{equation}
+
+\begin{equation}
+    \label{ctx2}
+    CtxAct_{EX}=\{sensorFailure \}
+\end{equation}
+
+\begin{equation}
+    \label{ctx3}
+    CtxAct = CtxAct_{TA} \bigcup CtxAct_{EX}
+\end{equation}
+
+To represent the domain requirements, we have chosen QPTL\cite{QPTL01} logic considering its power to deal with temporal constraints in addition to apply quantifiers over variables. As these variables must be propositional ones, i.e., only accepting boolean values, we codified problem's variables following this rule simplifying the representation.
+
+Basically, the domain requirement defines a timely and suitable response of the C2 System in case of context changes. We can represent this requirement with the Equation \ref{log01}.
+
+\begin{equation}
+    \label{log01}
+    \forall \alpha \in CtxAct \bullet \square ( \alpha \Rightarrow (E \models T))
+\end{equation}
+
+However, the team performing a mission depends on the C2 Approach $\omega \in \Omega$ selected to be operated during the mission execution. This relation is shown by the Equation \ref{log02}.
+
+\begin{equation}
+    \label{log02}
+     E \models T \Longleftrightarrow \forall t \in T, \Diamond \exists \omega \in \Omega \bullet (\omega \models t) 
+\end{equation}
+
+In turn, the satisfability of the task on the part of the selected C2 Approach is represented by the Equation \ref{log03}.
+
+\begin{equation}
+    \label{log03}
+     \omega \models t \Longleftrightarrow  \Diamond \exists e \in E \bullet  (( e \models t ) \land (t \in T_e) \land E^\omega) 
+\end{equation}
+
+The tasks allocated to a member $e$ compose the set $T_e$. This set is obtained by the function $f\_alloc$ in the Task Allocator's PG. Based on this, a task $t$ is allocated to a member $e$ when the Equation \ref{log04} is satisfied.
+
+\begin{equation}
+    \label{log04}
+       t \in T_e \Longleftrightarrow (TA.f\_alloc([t],E) =\ <index(e),[t]>)
+\end{equation}
+
+To define that a member $e$ satisfies a task, we must ensure that there is a valid configuration $c$ in that member such that this configuration satisfies the allocated task. Equation \ref{log05} shows this configuration existence and the Equation \ref{log06} describes the configuration $c$ as a subset of features $F'$ that defines a valid product of the member $e$. Furthermore, there is a high order function $\mathcal{R}$ which evaluates the relationship between the set of features $F'$ with the task $t$ to be allocated.
+
+\begin{equation}
+    \label{log05}
+       e \models t \Longleftrightarrow \exists c \in C_e \ \bullet \Diamond ( c \models t )
+\end{equation}
+
+\begin{equation}
+    \label{log06}
+       c \models t \Longleftrightarrow \exists F' \subseteq F \bullet (c \in P(F')) \land (\mathcal{R}(F', t))
+\end{equation}
+
+Equation \ref{log07} shows the composition of previous formulas according to the domain requirement.
+
+\begin{equation}
+    \label{log07}
+       \forall \alpha \in CtxAct \bullet \square(\alpha \Rightarrow ( \forall t \in T, \Diamond \exists \omega \in \Omega \bullet (\Diamond \exists e \in E \bullet  (\exists c \in C_e \ \bullet \Diamond (\color{red} c \models t \color{black} ) ) \land (t \in T_e) \land E^\omega) ))) 
+\end{equation}
+
+where $c \models t$ is defined by the Equation \ref{log06}. In a short way, we can rewrite the Equation \ref{log07} as follows:
+ 
+ \begin{equation}
+    \label{log08}
+       \forall \alpha \in CtxAct \bullet \square(\alpha \Rightarrow ( \forall t \Diamond \exists \omega \Diamond \exists e \exists c \bullet ( (\Diamond (\color{red} c \models t \color{black} ) ) \land (t \in T_e) \land E^\omega) )) 
+\end{equation}

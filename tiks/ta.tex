@@ -3,7 +3,7 @@
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,775); %set diagram left start at 0, and has height of 775
+%uncomment if require: \path (0,1000); %set diagram left start at 0, and has height of 1000
 
 %Curve Lines [id:da9480858267519683] 
 \draw    (230.5,181) .. controls (264.16,138.43) and (373.78,135.06) .. (406.05,178.66) ;
@@ -48,15 +48,17 @@
 \draw    (413.5,391) .. controls (394.69,323.68) and (299.43,241.66) .. (246.1,216.74) ;
 \draw [shift={(244.5,216)}, rotate = 384.36] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Rounded Rect [id:dp2887172897272543] 
-\draw   (111,586.6) .. controls (111,561.97) and (130.97,542) .. (155.6,542) -- (575.4,542) .. controls (600.03,542) and (620,561.97) .. (620,586.6) -- (620,720.4) .. controls (620,745.03) and (600.03,765) .. (575.4,765) -- (155.6,765) .. controls (130.97,765) and (111,745.03) .. (111,720.4) -- cycle ;
+\draw   (82.5,574.2) .. controls (82.5,547.58) and (104.08,526) .. (130.7,526) -- (592.3,526) .. controls (618.92,526) and (640.5,547.58) .. (640.5,574.2) -- (640.5,718.8) .. controls (640.5,745.42) and (618.92,767) .. (592.3,767) -- (130.7,767) .. controls (104.08,767) and (82.5,745.42) .. (82.5,718.8) -- cycle ;
 %Rounded Rect [id:dp07131134126212679] 
-\draw   (106,487.4) .. controls (106,481.1) and (111.1,476) .. (117.4,476) -- (609.6,476) .. controls (615.9,476) and (621,481.1) .. (621,487.4) -- (621,521.6) .. controls (621,527.9) and (615.9,533) .. (609.6,533) -- (117.4,533) .. controls (111.1,533) and (106,527.9) .. (106,521.6) -- cycle ;
+\draw   (87,486.2) .. controls (87,482.22) and (90.22,479) .. (94.2,479) -- (629.8,479) .. controls (633.78,479) and (637,482.22) .. (637,486.2) -- (637,507.8) .. controls (637,511.78) and (633.78,515) .. (629.8,515) -- (94.2,515) .. controls (90.22,515) and (87,511.78) .. (87,507.8) -- cycle ;
 %Curve Lines [id:da580151899278355] 
 \draw    (113.5,201) .. controls (51.13,189.12) and (89.71,141.96) .. (126.39,184.68) ;
 \draw [shift={(127.5,186)}, rotate = 230.57] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Curve Lines [id:da7513759524359456] 
 \draw    (159.5,175) .. controls (143.66,139.36) and (196.43,134.1) .. (179.05,175.72) ;
 \draw [shift={(178.5,177)}, rotate = 293.84000000000003] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Rounded Rect [id:dp9939310145650584] 
+\draw   (99.5,816.8) .. controls (99.5,792.61) and (119.11,773) .. (143.3,773) -- (563.7,773) .. controls (587.89,773) and (607.5,792.61) .. (607.5,816.8) -- (607.5,948.2) .. controls (607.5,972.39) and (587.89,992) .. (563.7,992) -- (143.3,992) .. controls (119.11,992) and (99.5,972.39) .. (99.5,948.2) -- cycle ;
 
 % Text Node
 \draw (181,201) node   [align=left] {Ready};
@@ -71,13 +73,13 @@
 % Text Node
 \draw (330,23) node   [align=left] {Waiting};
 % Text Node
-\draw (66,304) node    {$c_{1} ?\langle t,e'_{j} \rangle $};
+\draw (71,319) node    {$ch_{1} ?\langle t,e'\rangle $};
 % Text Node
 \draw (221,303) node    {$update$};
 % Text Node
-\draw (487,84) node    {$alloc=[] :c_{3} !\langle T',E'\rangle $};
+\draw (487,84) node    {$alloc=[] :ch_{3} !\langle T',E'\rangle $};
 % Text Node
-\draw (188,79) node    {$c_{2} ?\langle T',E'\rangle $};
+\draw (188,79) node    {$ch_{2} ?\langle T',E'\rangle $};
 % Text Node
 \draw (452,412) node   [align=left] {Binding};
 % Text Node
@@ -89,15 +91,18 @@
 % Text Node
 \draw (391,266) node    {$alloc=[] :done$};
 % Text Node
-\draw (367,661) node    {$ \begin{array}{l}
-Var=\{alloc,\ f\_alloc,\ teamStatus,\ T',\ E',\ t,\ e'_{j} ,\ time,\ interval\}\\
+\draw (373,654) node    {$ \begin{array}{l}
+Var=\{alloc,\ f\_alloc,\ teamStatus,\ T',\ T_{success} ,\ E',\ t,\ e'_{j}\}\\
 alloc=[ \langle \ i,T'_{i} \ \rangle ] ,\ where\ \{i\ \in \mathbb{N} \ |\ 1\ \leq i\ \leq |E|\ \} \ \ and\ T'\ \supseteq \bigcup\limits ^{|E|}_{i=1} T'_{i}\\
 Effect( allocate,\ \eta ) =\ \eta [ alloc:=\ f\_alloc( T',\ E')]\\
 Effect( bind,\ \eta ) =\ \eta [ \ \langle k,T'_{k} \rangle :=head( alloc) ;\ alloc:=tail( alloc) \ ]\\
-Effect( update,\ \eta ) =\eta [ \ T':=T'\cup \ [ t] \ ;\ E'=E'( e_{j} /e'_{\ }_{j})]\\
+Effect( update,\ \eta ) =\begin{cases}
+\eta [ \ T_{success} :=T_{success} \ \cup \ [ t] \ ] & \ \ \ \ if\ ( e'_{j} \ =null)\\
+\eta [ \ T':=T'\cup \ [ t] \ ;\ E'=E'( e_{j} /e'_{\ }_{j})] & \ \ \ \ otherwise
+\end{cases} \ \\
 Effect( done,\eta ) =\eta [ \ T':=[] \ ]\\
 Effect( addTask,\eta ) =\eta [ \ T':=T'+[ t'_{1} ,t'_{2} ,\ ...,\ t'_{k}] \ ]\\
-Effect( ping,\eta ) =\eta [ \ \langle T',E'\rangle :=teamStatus( E') \ ]\\
+Effect( memberFailure,\eta ) =\eta [ \ \langle T',E'\rangle :=teamStatus( E') \ ]\\
 \end{array}$};
 % Text Node
 \draw (219,8) node    {$g_{0}$};
@@ -114,16 +119,26 @@ Effect( ping,\eta ) =\eta [ \ \langle T',E'\rangle :=teamStatus( E') \ ]\\
 % Text Node
 \draw (582,320) node   [align=left] {(n)};
 % Text Node
-\draw (361.76,502) node    {$ \begin{array}{l}
-g_{0} :=( T'=[]) \ \land ( f\_alloc\ =\ f_{x}([ t_{1} ,\ ...,t_{n}] \ p_{1} ,\ [ e_{1} ,...,e_{n}] \ p_{2}))\\
-cg_{1} :=( mod( time,interval) =0)
-\end{array}$};
+\draw (361.76,497) node    {$g_{0} :=( T'=[]) \ \land ( f\_alloc\ =\ f_{x}([ t_{1} ,\ ...,t_{n}] \ p_{1} ,\ [ e_{1} ,...,e_{n}] \ p_{2})) \ \land T_{success} =[]$};
 % Text Node
-\draw (75,155) node    {$cg_{1} :ping$};
+\draw (75,155) node    {$memberFailure$};
 % Text Node
 \draw (163,134) node    {$addTask$};
 % Text Node
 \draw (174,464) node   [align=left] {\textbf{\underline{TASK ALLOCATOR}}};
+% Text Node
+\draw (360,878) node    {$ \begin{array}{l}
+Types:\\
+FM\ =\ \{ F,C \} \ \ where\ \ F\ =\{f_{1} ,\ f_{2} ,\ f_{3} ,\ ...,\ f_{n}\} \ \ and\ \ C\ \subseteq \ P( F) \ \\
+alloc\ :\ [ \langle \ integer,[ task] \ \rangle ]\\
+f\_alloc\ :\ ([ task] ,[ FM]) \ \rightarrow alloc\\
+teamStatus\ :\ ([ FM]) \ \rightarrow \ \langle [ task] ,[ FM] \rangle \\
+T'\ :\ [ task]\\
+T_{success} \ :\ [ task]\\
+E'\ :\ [ FM]\\
+t\ :\ task\\
+e'_{j} \ :\ FM
+\end{array}$};
 
 
 \end{tikzpicture}
