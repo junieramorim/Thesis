@@ -1,0 +1,51 @@
+In this section, we describe implementation key elements of the computational model proposed (cf. Section~\ref{sec:channelSystem}). The full implementation is available in a public repository\footnote{\gitRepository}.
+
+
+\subsection{Roles Implementation}
+
+%\cite{Mason2001} and \cite{Moffat01} show that a C2 process is composed by entities behaving according to a set of rules and the boundary conditions which generates the emerging behaviour of the whole system. Such entities interact with each other, providing a self-organization, to generate the collective emergent behaviour. \cite{Odell} presents that these different behaviours can be modelled as roles that are used as components to implement these entities. Based on this, our CS represents the three roles performed in parallel by the entities that compose the C2 context. Each of its role defines the pattern of interaction among the entities.
+
+%As agent-based systems are distributed systems where the agents communicate with each other and these interactions are dynamic, i.e., they change according to the circumstance, the roles enable a protocol and a generic description of these interactions. Based o this, \cite{agent0010} shows the using of roles for modelling communication and coordination of agents within an agent-based system, as well as components to build those agents. 
+ 
+In the current study, the three roles modelled by the PGs shown in Figures~\ref{fig:c2a_pg}, \ref{fig:ta_pg} and \ref{fig:ex_pg} are implemented to simulate a set of UAVs , i.e., agents, with autonomy of reconfiguration, allocation and execution, employed in a military recognition mission~\cite{UAV_Aplication}. The agents aim to perform the allocated tasks under simulated effects that represent the environment where they are operating. Such effects that can be in the environment, self or mission changes, simulate context changes or perturbations which insert dynamism into the scenarios. The UAVs reconfiguration to adapt themselves according to context changes, makes such behavior compatible with a DSPL architecture~\cite{c2-02} as a SAS implementation~\citep{BencomoHA12}.
+
+The typed-parameterized CS shown in Figure~\ref{fig:cs} is composed of multiple typed-parameterized PGs. We use such PGs to model roles, i.e., an abstraction of the entities' behavior that is part of a C2 structure. Such modeling provides a representation of the roles' class interactions, i.e., data exchange through the channels. In turn, an agent can play one or more instances of a role. Based o this, \cite{agent0010} shows the use of roles as components of agents' implementation for modeling communication and coordination of an agent-based system~\cite{agent1}. As an assumption to our implementation, we can not have more than one instance of the same role type implemented in the same agent. These agents can accumulate different types of roles and responsibilities and execute them according to the circumstance~\citep{weyns2019activforms}. 
+
+
+
+%roles interaction we implemented it as a multi-agent system~\cite{agent1}. The roles represented by the PGs are the description of the functions to be fulfilled by the agents in order to reach a goal. In addition, the agents can perform one or more of these roles, exchanging data with each other through buffers represented by the channels of CS. Such agents present behaviors according to their perceptions about the environment around them. These agents can accumulate different types of roles and responsibilities and execute them according to the circumstance~\citep{weyns2019activforms}. 
+
+%\cite{ABAR201713} shows a comparison among agent based modelling and simulation tools highlighting features and limitations. Such analysis remarked the adaptation capability of the agents as a response of some stimulus or perturbation in the system, e.g., an obstacle to be avoided. This reaction to changes defines the agent's capability to adapt itself according to the surrounding perceptions, becoming such behaviour compatible with a DSPL architecture~\cite{c2-02} as a SAS implementation~\citep{BencomoHA12}.
+
+
+
+
+
+%\input{tables/behaviour}
+
+
+
+%\begin{figure}[ht!]
+%    \centering
+%    \scalebox{.65}{\input{tikz/maneuver}}
+%    \caption{Maneuvering steps to deal with context changes}
+%    \label{fig:maneuver}
+%\end{figure}
+
+%Even the mission change is implemented by the simulation, our simulation is is not considering it due to the strategy of tasks insertion and removing. New tasks are inserted in a \textit{first in first out} line. It will be reallocated only if there is available resources or if a C2 approach change forces a general reallocation. Otherwise, the probability of these new tasks be executed is low considering the mission timeout. In addition, domain experts analyse this kind of modification as a new mission that can require reorganization and previous planning.
+
+
+
+\subsection{Task Allocation}
+
+To implement the proposed computational model, we defined a strategy to be applied by agents in order to distribute the tasks among them. Based on simulations applied by \cite{UAV01} we have implemented a variant allocation algorithm based on swarm-GAP~\cite{Schwarzrock2017}. Depending on the C2 Approach operated, the members are notified about the allocation performed and unfinished tasks. Relying on such information, each member runs the swarm-based algorithm presented by~\cite{UAV01} to allocate the available tasks.
+
+Allocation is feasible when a member activates a configuration, i.e., a set of features on board that makes the member compatible with the task. This compatibility written in Executor's PG as the relation $compatible(c,t)$, is represented by a numerical value between 0 and 1 that means the quality of a type of sensor to a type of task, e.g., sensor type A has a quality of .45 to perform the task type 2. In all cases, the allocation algorithm evaluates if the quality obtained satisfies an acceptance level in the simulator.
+
+
+\subsection{Maneuvering}
+
+Context changes can generate situations such the members' reconfiguration and tasks reallocation are not enough to keep mission execution. In that case, the C2 System performs a C2 Approach change, i.e., a maneuvering. The new C2 Approach operated can provide a higher awareness level, i.e., more information shared by the members with a new communication structure, and it can help TA and EX roles perform the reallocation and reconfiguration process based on the new data exchanged. 
+
+The C2 Approach maneuvering follows an enumerated type with five increasing values~\cite{nato01}: Conflicted, De-Conflicted, Coordinated, Collaborative and Edge. The initial C2 Approach for all scenarios simulated is De-Conflicted, i.e., a ring communication structure. From this C2 Approach, the maneuver follows incrementally over this list and going back to Conflicted after Edge.
+
